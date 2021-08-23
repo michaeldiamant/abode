@@ -15,7 +15,6 @@ installBaseApps() {
 
   sudo apt install -y \
     curl \
-    docker.io \
     git \
     gnome-tweak-tool \
     jq \
@@ -25,6 +24,16 @@ installBaseApps() {
     vlc \
     wireshark \
     yamllint
+}
+
+installDockerEngine() {
+  # Taken from https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository.
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg --yes
+  echo \
+    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  sudo apt-get update
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 }
 
 installPipApps() {
@@ -254,6 +263,7 @@ installBaseApps
 installPipApps
 installMainline
 installVim
+installDockerEngine
 installJdk "265b01"
 installSbt "1.3.13"
 installKubectl
