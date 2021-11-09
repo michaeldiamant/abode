@@ -9,7 +9,7 @@ removeSnap() {
 installBaseApps() {
   # Chrome
   sudo apt install -y gdebi
-  wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/Downloads
+  wget -q -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/Downloads
   sudo gdebi -n ~/Downloads/google-chrome-stable_current_amd64.deb
   rm -f ~/Downloads/google-chrome-stable_current_amd64.deb
 
@@ -38,8 +38,7 @@ installDockerEngine() {
 
 installPipApps() {
   pip3 install \
-    pytest \
-    yq
+    pytest
 }
 
 installVim() {
@@ -257,6 +256,18 @@ installGitXargs() {
   chmod +x ~/opt/git-xargs/git-xargs
 }
 
+installYq() {
+  local version="$1"
+  local binary="yq_linux_amd64"
+  local dir="~/opt/yq"
+
+  rm -rf "${dir}"
+  mkdir -p "${dir}"
+
+  wget -q https://github.com/mikefarah/yq/releases/download/${version}/${binary} -O ${dir}/yq && \
+    chmod +x ${dir}/yq
+}
+
 mkdir -p ~/opt
 
 installBaseApps
@@ -276,6 +287,7 @@ installTerraform "1.0.2"
 installTerraformDocs "0.10.1"
 installGo "1.15.2"
 installGitXargs "0.0.11"
+installYq "v4.14.1"
 configureBashAliases
 configureBashExports
 configureSudoers

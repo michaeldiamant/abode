@@ -11,5 +11,6 @@ $PATH:\
 ~/opt/kubectl:\
 ~/opt/sbt/bin:\
 ~/opt/terraform:\
-~/opt/terraform-docs:
+~/opt/terraform-docs:\
+~/opt/yq:
 
