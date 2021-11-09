@@ -87,7 +87,8 @@ installJdk() {
 
 installSbt() {
   local version="$1"
-  wget -N https://piccolo.link/sbt-"${version}".zip -P ~/Downloads
+
+  wget -q -N https://github.com/sbt/sbt/releases/download/v"${version}"/sbt-"${version}".zip -P ~/Downloads
   unzip -o -d ~/Downloads ~/Downloads/sbt-"${version}".zip
   rm -rf ~/opt/sbt-"${version}"
   mv -f ~/Downloads/sbt ~/opt/sbt-"${version}"
@@ -118,7 +119,7 @@ installHelm() {
 }
 
 installIntellij() {
-  local version="2020.2.1"
+  local version="2021.2.3"
   wget -N https://download.jetbrains.com/idea/ideaIC-"${version}".tar.gz -P ~/Downloads
   rm -rf ~/opt/intellij-"${version}"
   mkdir -p ~/opt/intellij-"${version}"
@@ -151,7 +152,7 @@ installScmBreeze() {
 installAwsCli() {
   wget -N https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -P ~/Downloads
   unzip -o -d /tmp ~/Downloads/awscli-exe-linux-x86_64.zip
-  sudo /tmp/aws/install
+  sudo /tmp/aws/install --update
 }
 
 installTerraform() {
@@ -259,13 +260,13 @@ installGitXargs() {
 installYq() {
   local version="$1"
   local binary="yq_linux_amd64"
-  local dir="~/opt/yq"
 
-  rm -rf "${dir}"
-  mkdir -p "${dir}"
+  rm -rf "~/opt/yq"
+  mkdir -p "~/opt/yq"
 
-  wget -q https://github.com/mikefarah/yq/releases/download/${version}/${binary} -O ${dir}/yq && \
-    chmod +x ${dir}/yq
+  wget -q https://github.com/mikefarah/yq/releases/download/${version}/${binary} -P ~/opt/yq
+  mv ~/opt/yq/${binary} ~/opt/yq/yq
+  chmod +x ~/opt/yq/yq
 }
 
 mkdir -p ~/opt
@@ -276,7 +277,7 @@ installMainline
 installVim
 installDockerEngine
 installJdk "265b01"
-installSbt "1.3.13"
+installSbt "1.5.5"
 installKubectl
 installArgoRollouts
 installHelm "3.3.1"
