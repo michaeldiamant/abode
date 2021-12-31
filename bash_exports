@@ -9,7 +9,7 @@ $PATH:\
 ~/opt/helm:\
 ~/opt/jdk/bin:\
 ~/opt/kubectl:\
-~/opt/sbt/bin:\
+~/opt/sbt/sbt/bin:\
 ~/opt/terraform:\
 ~/opt/terraform-docs:\
 ~/opt/yq:

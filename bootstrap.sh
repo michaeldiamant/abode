@@ -1,9 +1,42 @@
 #!/bin/bash
 
-set -euxo pipefail
+set -euo pipefail
+
+installPath="$HOME/opt"
 
 removeSnap() {
   sudo apt autoremove --purge snapd
+}
+
+installFromTar() {
+  local url="$1"
+  local symlinkName="$2"
+  local destinationDirName="$3"
+
+  local destinationPath="${installPath}/${destinationDirName}"
+  wget -qO - "$url" | tar -xzf - -C "$installPath" --one-top-level="$destinationPath" --strip-components=1
+
+  local symlinkPath="${installPath}/$symlinkName"
+  unlink "$symlinkPath" || true
+  ln -s "$destinationPath" "$symlinkPath"
+}
+
+installFromZip() {
+  local url="$1"
+  local symlinkName="$2"
+  local destinationDirName="$3"
+
+  local destinationPath="${installPath}/${destinationDirName}"
+  local downloadedFilename=$(mktemp)
+
+  wget -q -O "$downloadedFilename" "$url"
+  unzip -qo -d "$destinationPath" "$downloadedFilename"
+
+  local symlinkPath="${installPath}/$symlinkName"
+  unlink "$symlinkPath" || true
+  ln -s "$destinationPath" "$symlinkPath"
+
+  rm "$downloadedFilename"
 }
 
 installBaseApps() {
@@ -77,24 +110,21 @@ set backspace=indent,eol,start	"Backspace behaviour
 
 installJdk() {
   local version="$1"
-  wget -N https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_hotspot_8u"${version}".tar.gz -P ~/Downloads
-  mkdir -p ~/opt/jdk8u"${version}"
-  tar -xf ~/Downloads/OpenJDK8U-jdk_x64_linux_hotspot_8u"${version}".tar.gz -C ~/opt/jdk8u"${version}" --strip-components 1
-  unlink ~/opt/jdk || true
-  ln -s ~/opt/jdk8u"${version}" ~/opt/jdk
-  rm -f ~/Downloads/OpenJDK8U-jdk_x64_linux_hotspot_8u"${version}".tar.gz
+  local versionNoDashes=$(echo $version | sed "s/-//g")
+
+  installFromTar \
+    "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u$version/OpenJDK8U-jdk_x64_linux_hotspot_8u$versionNoDashes.tar.gz" \
+    "jdk" \
+    "jdk8u-$version"
 }
 
 installSbt() {
   local version="$1"
 
-  wget -q -N https://github.com/sbt/sbt/releases/download/v"${version}"/sbt-"${version}".zip -P ~/Downloads
-  unzip -o -d ~/Downloads ~/Downloads/sbt-"${version}".zip
-  rm -rf ~/opt/sbt-"${version}"
-  mv -f ~/Downloads/sbt ~/opt/sbt-"${version}"
-  unlink ~/opt/sbt || true
-  ln -s ~/opt/sbt-"${version}" ~/opt/sbt
-  rm -f ~/Downloads/sbt-"${version}".zip
+  installFromZip \
+    "https://github.com/sbt/sbt/releases/download/v$version/sbt-$version.zip" \
+    "sbt" \
+    "sbt-$version"
 }
 
 installKubectl() {
@@ -110,23 +140,19 @@ installKubectl() {
 
 installHelm() {
   local version="$1"
-  wget -N https://get.helm.sh/helm-v"${version}"-linux-amd64.tar.gz -P ~/Downloads
-  mkdir -p ~/opt/helm-"${version}"
-  tar -xf ~/Downloads/helm-v"${version}"-linux-amd64.tar.gz -C ~/opt/helm-"${version}" --strip-components 1
-  unlink ~/opt/helm || true
-  ln -s ~/opt/helm-"${version}" ~/opt/helm
-  rm -f ~/Downloads/helm-v"${version}"-linux-amd64.tar.gz
+  installFromTar \
+    "https://get.helm.sh/helm-v${version}-linux-amd64.tar.gz" \
+    "helm" \
+    "helm-$version"
 }
 
 installIntellij() {
-  local version="2021.2.3"
-  wget -N https://download.jetbrains.com/idea/ideaIC-"${version}".tar.gz -P ~/Downloads
-  rm -rf ~/opt/intellij-"${version}"
-  mkdir -p ~/opt/intellij-"${version}"
-  tar -xf ~/Downloads/ideaIC-"${version}".tar.gz -C ~/opt/intellij-"${version}" --strip-components 1
-  unlink ~/opt/intellij || true
-  ln -s ~/opt/intellij-"${version}" ~/opt/intellij
-  rm -f ~/Downloads/ideaIC-"${version}".tar.gz
+  local version="$1"
+
+  installFromTar \
+    "https://download.jetbrains.com/idea/ideaIC-"${version}".tar.gz" \
+    "intellij" \
+    "intellij-$version"
   
   echo "  
 [Desktop Entry]                                                                 
@@ -150,43 +176,48 @@ installScmBreeze() {
 }
 
 installAwsCli() {
-  wget -N https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -P ~/Downloads
-  unzip -o -d /tmp ~/Downloads/awscli-exe-linux-x86_64.zip
+  local url="https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
+  local downloadedFilename=$(mktemp)
+
+  wget -qN -O "$downloadedFilename" "$url"
+
+  local extractDir=$(mktemp -d)
+  unzip -qo -d "$extractDir" "$downloadedFilename"
   sudo /tmp/aws/install --update
+
+  rm "$downloadedFilename"
+  rm -rf "$extractDir"
 }
 
 installTerraform() {
   local version="$1"
-  wget -N https://releases.hashicorp.com/terraform/"$version"/terraform_"$version"_linux_amd64.zip -P ~/Downloads
-  unzip -o -d /tmp ~/Downloads/terraform_"$version"_linux_amd64.zip
-  mkdir -p ~/opt/terraform-"$version"
-  mv /tmp/terraform ~/opt/terraform-"$version"/terraform
-  unlink ~/opt/terraform || true
-  ln -s ~/opt/terraform-"$version" ~/opt/terraform
-  rm -f ~/Downloads/terraform_"$version"_linux_amd64.zip
+
+  installFromZip \
+    "https://releases.hashicorp.com/terraform/$version/terraform_${version}_linux_amd64.zip" \
+    "terraform" \
+    "terraform-$version"
 }
 
 installGo() {
   local version="$1"
-  wget -N https://golang.org/dl/go"$version".linux-amd64.tar.gz -P ~/Downloads
-  rm -rf ~/opt/go-"${version}"
-  mkdir -p ~/opt/go-"${version}"
-  tar -xf ~/Downloads/go"${version}".linux-amd64.tar.gz -C ~/opt/go-"${version}" --strip-components 1
-  unlink ~/opt/go || true
-  ln -s ~/opt/go-"${version}" ~/opt/go
-  rm -f ~/Downloads/go"${version}".linux-amd64.tar.gz
+
+  installFromTar \
+    "https://golang.org/dl/go"$version".linux-amd64.tar.gz" \
+    "go" \
+    "go-$version"
 }
 
 installTerraformDocs() {
   local version="$1"
-wget -N https://github.com/terraform-docs/terraform-docs/releases/download/v"$version"/terraform-docs-v"$version"-linux-amd64 -P ~/Downloads
-  rm -rf ~/opt/terraform-docs-"${version}"
-  mkdir -p ~/opt/terraform-docs-"${version}"
-  mv ~/Downloads/terraform-docs-v"${version}"-linux-amd64 ~/opt/terraform-docs-"${version}"/terraform-docs
-  chmod +x ~/opt/terraform-docs-"${version}"/terraform-docs
-  unlink ~/opt/terraform-docs || true
-  ln -s ~/opt/terraform-docs-"${version}" ~/opt/terraform-docs
-  rm -f ~/Downloads/terraform-docs-v"${version}"-linux-amd64
+
+  local destinationPath="$installPath/terraform-docs-$version"
+  local downloadedFilename="terraform-docs-v$version-linux-amd64"
+  wget -qP "$destinationPath" "https://github.com/terraform-docs/terraform-docs/releases/download/v$version/$downloadedFilename"
+  mv "$destinationPath/$downloadedFilename" "$destinationPath/terraform-docs"
+
+  chmod +x "$destinationPath"/terraform-docs
+  unlink "$installPath"/terraform-docs || true
+  ln -s "$destinationPath" "$installPath"/terraform-docs
 }
 
 configureBashExports() {
@@ -269,19 +300,19 @@ installYq() {
   chmod +x ~/opt/yq/yq
 }
 
-mkdir -p ~/opt
+mkdir -p "$installPath"
 
 installBaseApps
 installPipApps
 installMainline
 installVim
 installDockerEngine
-installJdk "265b01"
+installJdk "265-b01"
 installSbt "1.5.5"
 installKubectl
 installArgoRollouts
 installHelm "3.3.1"
-installIntellij
+installIntellij "2021.2.3"
 installScmBreeze
 installAwsCli
 installTerraform "1.0.2"
