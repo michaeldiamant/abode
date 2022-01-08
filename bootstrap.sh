@@ -51,6 +51,7 @@ installBaseApps() {
     git \
     gnome-tweak-tool \
     jq \
+    openconnect \
     python3-pip \
     python3-venv \
     tshark \
