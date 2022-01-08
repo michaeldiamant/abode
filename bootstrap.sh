@@ -183,7 +183,7 @@ installAwsCli() {
 
   local extractDir=$(mktemp -d)
   unzip -qo -d "$extractDir" "$downloadedFilename"
-  sudo /tmp/aws/install --update
+  sudo "$extractDir/aws/install" --update
 
   rm "$downloadedFilename"
   rm -rf "$extractDir"
