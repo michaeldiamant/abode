@@ -318,7 +318,7 @@ installScmBreeze
 installAwsCli
 installTerraform "1.0.2"
 installTerraformDocs "0.10.1"
-installGo "1.15.2"
+installGo "1.16.13"
 installGitXargs "0.0.11"
 installYq "v4.14.1"
 configureBashAliases
