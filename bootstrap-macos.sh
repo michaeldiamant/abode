@@ -26,10 +26,17 @@ function installScmBreeze() {
 installScmBreeze
 installGoVersionManager
 installGo "1.16.13"
+
+brew tap kidonng/malt # https://github.com/dexterleng/vimac/issues/152#issuecomment-903099562
+
 brew install \
-  pyenv
+  alt-tab \
+  kidonng/malt/vimac \
+  pyenv \
+  shellcheck
 brew install --cask \
   goland \
-  intellij-idea-ce
+  intellij-idea-ce \
+  iterm2
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
