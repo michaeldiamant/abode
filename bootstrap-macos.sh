@@ -36,6 +36,7 @@ brew install \
   shellcheck
 brew install --cask \
   goland \
+  karabiner-elements \
   intellij-idea-ce \
   iterm2
 
