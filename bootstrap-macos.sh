@@ -23,6 +23,12 @@ function installScmBreeze() {
   ~/.scm_breeze/install.sh  
 }
 
+function configureYabai() {
+  # Follows https://apple.stackexchange.com/a/418489.
+  brew services start yabai
+  yabai -m config focus_follows_mouse autofocus
+}
+
 installScmBreeze
 installGoVersionManager
 installGo "1.16.13"
@@ -33,11 +39,14 @@ brew install \
   alt-tab \
   kidonng/malt/vimac \
   pyenv \
-  shellcheck
+  shellcheck \
+  koekeishiya/formulae/yabai
 brew install --cask \
   goland \
   karabiner-elements \
   intellij-idea-ce \
-  iterm2
+  iterm2 \
+  linearmouse
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
+
