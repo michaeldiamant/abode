@@ -13,32 +13,6 @@ alias ll="ls -alhGp"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+eval "$(pyenv init -)"
 
 [ -s "/Users/michael/.scm_breeze/scm_breeze.sh" ] && source "/Users/michael/.scm_breeze/scm_breeze.sh"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv init -)"
