@@ -42,11 +42,13 @@ brew install \
   shellcheck \
   koekeishiya/formulae/yabai
 brew install --cask \
+  docker \
   goland \
   karabiner-elements \
   intellij-idea-ce \
   iterm2 \
-  linearmouse
+  linearmouse \
+  visual-studio-code
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
 
