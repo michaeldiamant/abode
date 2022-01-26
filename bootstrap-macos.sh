@@ -36,8 +36,12 @@ installGo "1.16.13"
 brew tap kidonng/malt # https://github.com/dexterleng/vimac/issues/152#issuecomment-903099562
 
 brew install \
+  automake \
   alt-tab \
+  boost \
+  jq \
   kidonng/malt/vimac \
+  libtool \
   pyenv \
   shellcheck \
   koekeishiya/formulae/yabai
