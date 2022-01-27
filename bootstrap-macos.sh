@@ -45,6 +45,7 @@ brew install \
   pyenv \
   shellcheck \
   koekeishiya/formulae/yabai
+  tree \
 brew install --cask \
   docker \
   goland \
@@ -55,4 +56,4 @@ brew install --cask \
   visual-studio-code
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
-
+defaults write com.apple.finder AppleShowAllFiles YES
