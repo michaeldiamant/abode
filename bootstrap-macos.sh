@@ -52,6 +52,7 @@ brew install --cask \
   karabiner-elements \
   intellij-idea-ce \
   iterm2 \
+  itsycal \
   linearmouse \
   visual-studio-code
 
