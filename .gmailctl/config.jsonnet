@@ -1,5 +1,7 @@
 local lib = import 'gmailctl.libsonnet';
 
+// These filters may provide inspiration:  https://gist.github.com/ldez/bd6e6401ad0855e6c0de6da19a8c50b5.
+
 local filterBySubjectWithLabel(from, subject, labels) =
   {
     filter: {
