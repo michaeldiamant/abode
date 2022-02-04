@@ -21,35 +21,49 @@ local filterBySubjectWithLabel(from, subject, labels) =
 
 local ghNotifications = "notifications@github.com";
 
-local filterGithubRepo(organization, repo) = [
-  // Filters for Issues by absence of other modifiers (e.g. PR).  As of writing,
-  // responses to Issues do not include _Issue_ in the subject.
+// Filters for Issues by absence of other modifiers (e.g. PR).  As of writing,
+// responses to Issues do not include _Issue_ in the subject.
+local filterIssues(organization, repo, label) =
   filterBySubjectWithLabel(
     ghNotifications,
     '-PR %s/%s' % [organization, repo],
-    ['%s/Issues' % repo, '%s' % repo]
-  ),
+    ['%s/Issues' % label, '%s' % label]
+  );
+
+local filterPullRequests(organization, repo, label) =
   filterBySubjectWithLabel(
     ghNotifications,
     '%s/%s PR' % [organization, repo],
-    ['%s/PRs' % repo, '%s' % repo, '01-PRs']
-  ),
+    ['%s/PRs' % label, '%s' % label, '01-PRs']
+  );
+
+local filterPublicGithubRepo(organization, repo) = [
+  filterIssues(organization, repo, repo),
+  filterPullRequests(organization, repo, repo),
 ];
 
-local rules = std.flattenArrays([
-  filterGithubRepo('algorand', '%s' % repo)
-  for repo in [
-    'algorand-sdk-testing',
-    'go-algorand',
-    'go-algorand-sdk',
-    'indexer',
-    'java-algorand-sdk',
-    'js-algorand-sdk',
-    'py-algorand-sdk',
-    'pyteal',
-    'py-algorand-sdk'
-  ]
-]);
+local filterPrivateGithubRepo(organization, repo, label) = [
+  filterIssues(organization, repo, label),
+  filterPullRequests(organization, repo, label),
+];
+
+local rules =
+  std.flattenArrays([
+    filterPublicGithubRepo('algorand', '%s' % repo)
+    for repo in [
+      'algorand-sdk-testing',
+      'go-algorand',
+      'go-algorand-sdk',
+      'indexer',
+      'java-algorand-sdk',
+      'js-algorand-sdk',
+      'py-algorand-sdk',
+      'pyteal',
+      'py-algorand-sdk'
+  ]]) +
+  std.flattenArrays([
+    filterPrivateGithubRepo('algorand', 'go-algorand-internal', 'go-algorand')
+  ]);
 
 {
   labels: lib.rulesLabels(rules),
