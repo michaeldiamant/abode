@@ -7,8 +7,8 @@ then
 fi
 
 alias tedit="open -e"
-alias ls="ls -Gp"
-alias ll="ls -alhGp"
+alias ls="gls --color=auto"
+alias ll="gls -alh --color=auto"
 alias py-new-venv="python3 -m venv .venv"
 alias py-activate="source .venv/bin/activate"
 
