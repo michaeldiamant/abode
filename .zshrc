@@ -9,6 +9,8 @@ fi
 alias tedit="open -e"
 alias ls="ls -Gp"
 alias ll="ls -alhGp"
+alias py-new-venv="python3 -m venv .venv"
+alias py-activate="source .venv/bin/activate"
 
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
