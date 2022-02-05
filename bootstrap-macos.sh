@@ -54,6 +54,7 @@ brew install --cask \
   intellij-idea-ce \
   iterm2 \
   itsycal \
+  ledger-live \
   linearmouse \
   visual-studio-code
 
