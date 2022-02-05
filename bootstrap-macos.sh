@@ -39,6 +39,7 @@ brew install \
   automake \
   alt-tab \
   boost \
+  core-utils \
   gmailctl \
   jq \
   kidonng/malt/vimac \
