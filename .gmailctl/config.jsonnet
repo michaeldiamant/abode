@@ -37,32 +37,43 @@ local filterPullRequests(organization, repo, label) =
     ['%s/PRs' % label, '%s' % label, '01-PRs']
   );
 
-local filterPublicGithubRepo(organization, repo) = [
+local filterGithubRepo(organization, repo) = [
   filterIssues(organization, repo, repo),
   filterPullRequests(organization, repo, repo),
 ];
 
-local filterPrivateGithubRepo(organization, repo, label) = [
+local filterGithubRepoWithLabel(organization, repo, label) = [
   filterIssues(organization, repo, label),
   filterPullRequests(organization, repo, label),
 ];
 
+local chainFilterGithubRepos(organization, repos) =
+  lib.chainFilters(
+    std.flattenArrays([
+      filterGithubRepo(organization, '%s' % repo)
+      for repo in repos
+    ])
+  );
+
 local rules =
   std.flattenArrays([
-    filterPublicGithubRepo('algorand', '%s' % repo)
+    filterGithubRepo('algorand', '%s' % repo)
     for repo in [
       'algorand-sdk-testing',
+      'docs',
       'go-algorand',
       'go-algorand-sdk',
       'indexer',
       'java-algorand-sdk',
       'js-algorand-sdk',
       'py-algorand-sdk',
+      'py-algorand-sdk',
       'pyteal',
-      'py-algorand-sdk'
-  ]]) +
+      'pyteal-utils',
+    ]
+  ]) +
   std.flattenArrays([
-    filterPrivateGithubRepo('algorand', 'go-algorand-internal', 'go-algorand')
+    filterGithubRepoWithLabel('algorand', 'go-algorand-internal', 'go-algorand')
   ]);
 
 {
