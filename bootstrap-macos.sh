@@ -51,6 +51,7 @@ brew install \
 brew install --cask \
   docker \
   goland \
+  google-chrome \
   karabiner-elements \
   intellij-idea-ce \
   iterm2 \
