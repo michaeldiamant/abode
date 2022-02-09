@@ -58,6 +58,7 @@ brew install --cask \
   itsycal \
   ledger-live \
   linearmouse \
+  pycharm \
   visual-studio-code
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
