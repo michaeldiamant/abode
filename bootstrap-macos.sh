@@ -2,11 +2,6 @@
 
 set -euo pipefail
 
-function installGoVersionManager() {
-  rm -rf ~/.gvm
-  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-}
-
 function installGo() {
   local goVersion="$1"
 
@@ -29,13 +24,23 @@ function configureYabai() {
   yabai -m config focus_follows_mouse autofocus
 }
 
+function installAsdfPackages() {
+  asdf plugin add python
+  asdf install python 3.10.2
+  asdf install python 2.7.18
+  asdf global python 3.10.2 2.7.18
+
+  asdf plugin add golang
+  asdf install golang 1.14.15
+  asdf global golang 1.14.15
+}
+
 installScmBreeze
-installGoVersionManager
-installGo "1.16.13"
 
 brew tap kidonng/malt # https://github.com/dexterleng/vimac/issues/152#issuecomment-903099562
 
 brew install \
+  asdf \
   automake \
   alt-tab \
   boost \
@@ -44,7 +49,6 @@ brew install \
   jq \
   kidonng/malt/vimac \
   libtool \
-  pyenv \
   shellcheck \
   koekeishiya/formulae/yabai
   tree \
@@ -60,6 +64,8 @@ brew install --cask \
   linearmouse \
   pycharm \
   visual-studio-code
+
+installAsdfPackages
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
 defaults write com.apple.finder AppleShowAllFiles YES
