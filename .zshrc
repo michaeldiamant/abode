@@ -17,4 +17,8 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 . /usr/local/opt/asdf/libexec/asdf.sh
 
+GOV=$(asdf where golang)
+export GOROOT=$GOV/go
+export GOPATH=$(go env GOPATH)
+
 [ -s "/Users/michael/.scm_breeze/scm_breeze.sh" ] && source "/Users/michael/.scm_breeze/scm_breeze.sh"
