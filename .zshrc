@@ -7,6 +7,7 @@ then
 fi
 
 alias tedit="open -e"
+alias git-branch-history="git log --graph --decorate --oneline"
 alias ls="gls --color=auto"
 alias ll="gls -alh --color=auto"
 alias py-new-venv="python3 -m venv .venv"
