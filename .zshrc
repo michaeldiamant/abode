@@ -21,5 +21,6 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 GOV=$(asdf where golang)
 export GOROOT=$GOV/go
 export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
 
 [ -s "/Users/michael/.scm_breeze/scm_breeze.sh" ] && source "/Users/michael/.scm_breeze/scm_breeze.sh"
