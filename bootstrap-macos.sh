@@ -25,14 +25,18 @@ function configureYabai() {
 }
 
 function installAsdfPackages() {
+  asdf plugin add golang
+  asdf install golang 1.14.15
+  asdf global golang 1.14.15
+
+  asdf plugin add postgres
+  asdf install postgres 13.6
+  asdf global postgres 13.6
+
   asdf plugin add python
   asdf install python 3.10.2
   asdf install python 2.7.18
   asdf global python 3.10.2 2.7.18
-
-  asdf plugin add golang
-  asdf install golang 1.14.15
-  asdf global golang 1.14.15
 }
 
 installScmBreeze
@@ -45,13 +49,19 @@ brew install \
   alt-tab \
   boost \
   core-utils \
+  curl \
   gmailctl \
+  gcc \
   jq \
   kidonng/malt/vimac \
   libtool \
+  openssl \
+  ossp-uuid \
+  readline \
   shellcheck \
   koekeishiya/formulae/yabai
   tree \
+  zlib
 brew install --cask \
   docker \
   goland \
