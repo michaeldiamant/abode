@@ -17,7 +17,21 @@ local lib = import 'gmailctl.libsonnet';
 // * PR approvals show up in _!PRs_ because the subject does not include _PR_.
 //   A possible fix is to search the email body for keywords like _approved_.
 
-local filterBySubjectWithLabel(from, subject, labels) =
+local filterByRecipientWithLabels(from, to, labels) =
+  {
+    filter: {
+      and: [
+        { from: from },
+        { to: to },
+      ],
+    },
+    actions: {
+      archive: true,
+      labels: labels,
+    },
+  };
+
+local filterBySubjectWithLabels(from, subject, labels) =
   {
     filter: {
       and: [
@@ -34,7 +48,14 @@ local filterBySubjectWithLabel(from, subject, labels) =
     },
   };
 
-local ghNotifications = "notifications@github.com";
+local ghNotifications = 'notifications@github.com';
+
+local filterReviewRequests() =
+  filterByRecipientWithLabels(
+    ghNotifications,
+    'review_requested@noreply.github.com',
+    ['01-PR-RR']
+  );
 
 // Filters for non-PR notifications (e.g. Issues and Releases) by absence of
 // other _PR_ modifier.
@@ -42,17 +63,17 @@ local ghNotifications = "notifications@github.com";
 // To avoid creating numerous sub-labels, bucket all non-PR notifications in
 // the same label.
 local filterNonPullRequestNotifications(organization, repo, label) =
-  filterBySubjectWithLabel(
+  filterBySubjectWithLabels(
     ghNotifications,
     '-PR %s/%s' % [organization, repo],
     ['%s/!PRs' % label, '%s' % label]
   );
 
 local filterPullRequests(organization, repo, label) =
-  filterBySubjectWithLabel(
+  filterBySubjectWithLabels(
     ghNotifications,
     '%s/%s PR' % [organization, repo],
-    ['%s/PRs' % label, '%s' % label, '01-PRs']
+    ['%s/PRs' % label, '%s' % label, '02-PRs']
   );
 
 local filterGithubRepo(organization, repo) = [
@@ -74,20 +95,22 @@ local chainFilterGithubRepos(organization, repos) =
   );
 
 local rules =
-  std.flattenArrays([
-    filterGithubRepo('algorand', '%s' % repo)
-    for repo in [
-      'algorand-sdk-testing',
-      'docs',
-      'go-algorand',
-      'go-algorand-sdk',
-      'indexer',
-      'java-algorand-sdk',
-      'js-algorand-sdk',
-      'py-algorand-sdk',
-      'py-algorand-sdk',
-      'pyteal',
-      'pyteal-utils',
+  [filterReviewRequests()] +
+  std.flattenArrays(
+    [
+      filterGithubRepo('algorand', '%s' % repo)
+      for repo in [
+        'algorand-sdk-testing',
+        'docs',
+        'go-algorand',
+        'go-algorand-sdk',
+        'indexer',
+        'java-algorand-sdk',
+        'js-algorand-sdk',
+        'py-algorand-sdk',
+        'py-algorand-sdk',
+        'pyteal',
+        'pyteal-utils',
     ]
   ]) +
   std.flattenArrays([
