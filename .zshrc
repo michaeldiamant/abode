@@ -116,3 +116,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -s "/Users/michael/.scm_breeze/scm_breeze.sh" ] && source "/Users/michael/.scm_breeze/scm_breeze.sh"
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+for f in "${HOME}"/.zshrc.d/*.zshrc;
+do
+  source "$f"
+done
+
