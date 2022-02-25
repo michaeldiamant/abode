@@ -18,6 +18,7 @@ export PATH=$PATH:$GOPATH/bin
 
 [ -s "/Users/michael/.scm_breeze/scm_breeze.sh" ] && source "/Users/michael/.scm_breeze/scm_breeze.sh"
 
+alias dps="docker ps"
 alias tedit="open -e"
 alias git-branch-history="git log --graph --decorate --oneline"
 alias py-new-venv="python3 -m venv .venv"
