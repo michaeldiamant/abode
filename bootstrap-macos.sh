@@ -81,6 +81,7 @@ brew install \
   tree \
   zlib
 brew install --cask \
+  brave-browser \
   docker \
   goland \
   google-chrome \
