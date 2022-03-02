@@ -1,13 +1,14 @@
 {
     "files.autoSave": "onFocusChange",
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "security.workspace.trust.untrustedFiles": "open",
     "editor.inlayHints.fontSize": 1,
-    "editor.codeLensFontSize": 16,
+    "editor.codeLensFontSize": 18,
     "debug.console.fontSize": 16,
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 18,
     "diffEditor.ignoreTrimWhitespace": false,
     "files.trimTrailingWhitespace": true,
     "editor.minimap.enabled": false,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "restructuredtext.preview.fontSize": 16
 }
