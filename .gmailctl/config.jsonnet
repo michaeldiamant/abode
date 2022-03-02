@@ -50,12 +50,30 @@ local filterBySubjectWithLabels(from, subject, labels) =
 
 local ghNotifications = 'notifications@github.com';
 
-local filterReviewRequests() =
-  filterByRecipientWithLabels(
-    ghNotifications,
-    'review_requested@noreply.github.com',
-    ['01-PR-RR']
-  );
+// Catalogs labels by priority.  Higher urgency labels sorted to appear at top
+// of gmail label list.
+local priorityLabels = {
+  urgent: '01-PR-Urgent',
+  ci: '02-PR-CI',
+  mentions: '03-PR-Mentions',
+  allPrs: '04-PRs'
+};
+
+local filterUrgentPullRequestActivity() =
+  local sources = [
+    { to: 'author@noreply.github.com', label: priorityLabels.mentions },
+    { to: 'ci_activity@noreply.github.com', label: priorityLabels.ci },
+    { to: 'review_requested@noreply.github.com', label: priorityLabels.mentions },
+  ];
+
+  [
+    filterByRecipientWithLabels(
+      ghNotifications,
+      s.to,
+      [ s.label, priorityLabels.urgent ]
+    )
+    for s in sources
+  ];
 
 // Filters for non-PR notifications (e.g. Issues and Releases) by absence of
 // other _PR_ modifier.
@@ -73,7 +91,7 @@ local filterPullRequests(organization, repo, label) =
   filterBySubjectWithLabels(
     ghNotifications,
     '%s/%s PR' % [organization, repo],
-    ['%s/PRs' % label, '%s' % label, '02-PRs']
+    ['%s/PRs' % label, '%s' % label, priorityLabels.allPrs ]
   );
 
 local filterGithubRepo(organization, repo) = [
@@ -95,7 +113,7 @@ local chainFilterGithubRepos(organization, repos) =
   );
 
 local rules =
-  [filterReviewRequests()] +
+  filterUrgentPullRequestActivity()  +
   std.flattenArrays(
     [
       filterGithubRepo('algorand', '%s' % repo)
