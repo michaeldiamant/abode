@@ -63,6 +63,7 @@ local filterUrgentPullRequestActivity() =
   local sources = [
     { to: 'author@noreply.github.com', label: priorityLabels.mentions },
     { to: 'ci_activity@noreply.github.com', label: priorityLabels.ci },
+    { to: 'mention@noreply.github.com', label: priorityLabels.mentions },
     { to: 'review_requested@noreply.github.com', label: priorityLabels.mentions },
   ];
 
