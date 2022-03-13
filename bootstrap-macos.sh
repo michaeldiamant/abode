@@ -72,6 +72,7 @@ brew install \
   gcc \
   jq \
   kidonng/malt/vimac \
+  msgpack-tools \
   libtool \
   openssl \
   ossp-uuid \
