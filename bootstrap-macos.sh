@@ -62,6 +62,7 @@ installScmBreeze
 brew tap kidonng/malt # https://github.com/dexterleng/vimac/issues/152#issuecomment-903099562
 
 brew install \
+  act \
   asdf \
   automake \
   alt-tab \
