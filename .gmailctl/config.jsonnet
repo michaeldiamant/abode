@@ -123,6 +123,7 @@ local rules =
         'docs',
         'go-algorand',
         'go-algorand-sdk',
+        'graviton',
         'indexer',
         'java-algorand-sdk',
         'js-algorand-sdk',
@@ -130,6 +131,7 @@ local rules =
         'py-algorand-sdk',
         'pyteal',
         'pyteal-utils',
+        'sandbox'
     ]
   ]) +
   std.flattenArrays([
