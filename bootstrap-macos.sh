@@ -43,8 +43,8 @@ function installAsdfPackages() {
   asdf global awscli latest
 
   asdf plugin add golang
-  asdf install golang 1.14.15
-  asdf global golang 1.14.15
+  asdf install golang 1.16.9
+  asdf global golang 1.16.9
 
   asdf plugin add postgres
   asdf install postgres 13.6
