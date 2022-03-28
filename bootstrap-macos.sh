@@ -103,3 +103,5 @@ installAsdfPackages
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
 defaults write com.apple.finder AppleShowAllFiles YES
+
+pipx install build
