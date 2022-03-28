@@ -77,9 +77,11 @@ brew install \
   libtool \
   openssl \
   ossp-uuid \
+  pipx \
   readline \
   shellcheck \
-  koekeishiya/formulae/yabai
+  koekeishiya/formulae/yabai \
+  tox \
   tree \
   zlib
 brew install --cask \
