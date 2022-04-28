@@ -67,6 +67,7 @@ brew install \
   automake \
   alt-tab \
   boost \
+  circleci \
   core-utils \
   curl \
   gmailctl \
@@ -105,3 +106,6 @@ defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
 defaults write com.apple.finder AppleShowAllFiles YES
 
 pipx install build
+
+go install golang.org/x/perf/cmd/...@latest
+go get -u golang.org/x/tools/cmd/stringer
