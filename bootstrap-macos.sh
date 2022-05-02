@@ -76,6 +76,7 @@ brew install \
   kidonng/malt/vimac \
   msgpack-tools \
   libtool \
+  node \
   openssl \
   ossp-uuid \
   pipx \
