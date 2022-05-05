@@ -10,5 +10,10 @@
     "files.trimTrailingWhitespace": true,
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
-    "restructuredtext.preview.fontSize": 16
+    "restructuredtext.preview.fontSize": 16,
+    "cSpell.userWords": [
+        "Algorand",
+        "hotspot",
+        "Triaging"
+    ]
 }
