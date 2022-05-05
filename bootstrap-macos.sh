@@ -27,8 +27,8 @@ function installGo() {
 
 function installScmBreeze() {
   rm -rf ~/.scm_breeze
-  git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
-  ~/.scm_breeze/install.sh  
+  git clone https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
+  ~/.scm_breeze/install.sh
 }
 
 function configureYabai() {
@@ -56,8 +56,8 @@ function installAsdfPackages() {
   asdf global python 3.10.2 2.7.18
 }
 
-installOhMyZsh
-installScmBreeze
+defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
+defaults write com.apple.finder AppleShowAllFiles YES
 
 brew tap kidonng/malt # https://github.com/dexterleng/vimac/issues/152#issuecomment-903099562
 
@@ -68,7 +68,7 @@ brew install \
   alt-tab \
   boost \
   circleci \
-  core-utils \
+  coreutils \
   curl \
   gmailctl \
   gcc \
@@ -101,10 +101,10 @@ brew install --cask \
   pycharm \
   visual-studio-code
 
-installAsdfPackages
+installOhMyZsh
+installScmBreeze
 
-defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
-defaults write com.apple.finder AppleShowAllFiles YES
+installAsdfPackages
 
 pipx install build
 
