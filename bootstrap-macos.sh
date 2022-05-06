@@ -44,7 +44,8 @@ function installAsdfPackages() {
 
   asdf plugin add golang
   asdf install golang 1.16.9
-  asdf global golang 1.16.9
+  asdf install golang 1.17.9
+  asdf global golang 1.17.9
 
   asdf plugin add postgres
   asdf install postgres 13.6
@@ -58,6 +59,8 @@ function installAsdfPackages() {
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
 defaults write com.apple.finder AppleShowAllFiles YES
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew tap kidonng/malt # https://github.com/dexterleng/vimac/issues/152#issuecomment-903099562
 
@@ -110,3 +113,5 @@ pipx install build
 
 go install golang.org/x/perf/cmd/...@latest
 go get -u golang.org/x/tools/cmd/stringer
+
+softwareupdate --install-rosetta
