@@ -25,4 +25,9 @@ Changes from default:
   * Delay until repeat:  Shortest
   * Use F1, F2, etc as standard function keys:  Checked
 * Shortcuts
-  * Keyboard - Uncheck all shortcuts except _Move focus to next window_ 
+  * Keyboard - Uncheck all shortcuts except _Move focus to next window_
+
+# Accessibility
+Changes from default:
+
+* Display > Pointer > Pointer size:  Move slider towards halfway point
