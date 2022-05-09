@@ -122,6 +122,7 @@ local rules =
         'algorand-sdk-testing',
         'docs',
         'go-algorand',
+        'go-algorand-ci',
         'go-algorand-sdk',
         'graviton',
         'indexer',
@@ -131,6 +132,7 @@ local rules =
         'py-algorand-sdk',
         'pyteal',
         'pyteal-utils',
+        'rialto',
         'sandbox'
     ]
   ]) +
