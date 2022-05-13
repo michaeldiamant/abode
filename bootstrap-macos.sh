@@ -79,6 +79,7 @@ brew install \
   kidonng/malt/vimac \
   msgpack-tools \
   libtool \
+  maven \
   node \
   openssl \
   ossp-uuid \
