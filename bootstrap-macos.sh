@@ -47,6 +47,10 @@ function installAsdfPackages() {
   asdf install golang 1.17.9
   asdf global golang 1.17.9
 
+  asdf plugin-add java https://github.com/halcyon/asdf-java.git
+  asdf install java adoptopenjdk-18.0.1+10
+  asdf global java adoptopenjdk-18.0.1+10
+
   asdf plugin add postgres
   asdf install postgres 13.6
   asdf global postgres 13.6
