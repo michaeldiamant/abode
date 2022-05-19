@@ -121,6 +121,7 @@ local rules =
       for repo in [
         'algorand-sdk-testing',
         'docs',
+        'generator',
         'go-algorand',
         'go-algorand-ci',
         'go-algorand-sdk',
