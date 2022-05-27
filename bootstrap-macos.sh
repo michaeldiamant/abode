@@ -107,7 +107,8 @@ brew install --cask \
   linearmouse \
   pgadmin4 \
   pycharm \
-  visual-studio-code
+  visual-studio-code \
+  webstorm
 
 installOhMyZsh
 installScmBreeze
