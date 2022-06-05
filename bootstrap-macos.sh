@@ -77,6 +77,7 @@ brew install \
   circleci \
   coreutils \
   curl \
+  fzf \
   gmailctl \
   gcc \
   jq \
