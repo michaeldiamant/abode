@@ -80,6 +80,7 @@ brew install \
   fzf \
   gmailctl \
   gcc \
+  just \
   jq \
   kidonng/malt/vimac \
   msgpack-tools \
