@@ -56,9 +56,11 @@ function installAsdfPackages() {
   asdf global postgres 13.6
 
   asdf plugin add python
-  asdf install python 3.10.2
+  asdf install python 3.10.4
+  asdf install python 3.9.13
+  asdf install python 3.8.13
   asdf install python 2.7.18
-  asdf global python 3.10.2 2.7.18
+  asdf global python 3.10.4 2.7.18
 }
 
 defaults write -g com.apple.mouse.scaling 10 # Override max mouse sensitivity
