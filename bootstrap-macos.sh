@@ -97,6 +97,7 @@ brew install \
   koekeishiya/formulae/yabai \
   tox \
   tree \
+  watchman \
   zlib
 brew install --cask \
   brave-browser \
