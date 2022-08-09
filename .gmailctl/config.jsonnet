@@ -120,6 +120,7 @@ local rules =
       filterGithubRepo('algorand', '%s' % repo)
       for repo in [
         'algorand-sdk-testing',
+        'avm-abi',
         'docs',
         'generator',
         'go-algorand',
