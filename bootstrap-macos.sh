@@ -98,6 +98,7 @@ brew install \
   tox \
   tree \
   watchman \
+  yq \
   zlib
 brew install --cask \
   brave-browser \
