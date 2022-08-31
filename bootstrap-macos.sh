@@ -97,6 +97,7 @@ brew install \
   koekeishiya/formulae/yabai \
   tox \
   tree \
+  watch \
   watchman \
   yq \
   zlib
