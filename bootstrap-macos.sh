@@ -112,6 +112,7 @@ brew install --cask \
   itsycal \
   ledger-live \
   linearmouse \
+  paintbrush \
   pgadmin4 \
   pycharm \
   visual-studio-code \
