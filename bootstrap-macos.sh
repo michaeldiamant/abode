@@ -103,6 +103,8 @@ brew install \
   zlib
 brew install --cask \
   brave-browser \
+  datagrip \
+  dbeaver-community \
   docker \
   goland \
   google-chrome \
