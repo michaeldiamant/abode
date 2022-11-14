@@ -140,6 +140,20 @@ local rules =
   ]) +
   std.flattenArrays([
     filterGithubRepoWithLabel('algorand', 'go-algorand-internal', 'go-algorand')
+  ]) +
+  std.flattenArrays(
+    [
+      filterGithubRepo('algorand-devrel', '%s' % repo)
+      for repo in [
+        'beaker'
+    ]
+  ]) +
+  std.flattenArrays(
+    [
+      filterGithubRepo('algorandfoundation', '%s' % repo)
+      for repo in [
+        'algokit-cli'
+    ]
   ]);
 
 {
