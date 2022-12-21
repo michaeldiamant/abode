@@ -51,6 +51,10 @@ function installAsdfPackages() {
   asdf install java adoptopenjdk-18.0.1+10
   asdf global java adoptopenjdk-18.0.1+10
 
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  asdf install nodejs lts-gallium
+  asdf global nodejs lts-gallium
+
   asdf plugin add postgres
   asdf install postgres 13.6
   asdf global postgres 13.6
