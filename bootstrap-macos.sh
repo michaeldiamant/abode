@@ -86,6 +86,7 @@ brew install \
   fzf \
   gmailctl \
   gcc \
+  jc \
   just \
   jq \
   kidonng/malt/vimac \
