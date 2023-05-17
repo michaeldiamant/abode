@@ -14,12 +14,21 @@ vim.keymap.set('n', '<leader>ci', builtin.lsp_incoming_calls, {})
 vim.keymap.set('n', '<leader>co', builtin.lsp_outgoing_calls, {})
 
 require('telescope').setup {
-	pickers = {
-		find_files = {
-			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-		},
-	},
+  pickers = {
+    find_files = {
+      -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    },
+    live_grep = {
+      additional_args = function (_)
+        return {
+          "--hidden",
+          "--glob",
+          "!**/.git/*",
+        }
+      end
+    },
+  },
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
