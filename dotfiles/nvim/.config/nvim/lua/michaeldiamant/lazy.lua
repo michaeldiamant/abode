@@ -63,7 +63,9 @@ require("lazy").setup({
   "JalaiAmitahl/maven-compiler.vim", -- Works for compile errors but not tests
 
   -- Misc
-  "tpope/vim-commentary",
+  "tpope/vim-commentary", -- Comment with gc
+  "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
+  "folke/neodev.nvim", -- Fix undefined global vim errors
   --  "christoomey/vim-tmux-navigator",
 --  "folke/trouble.nvim",
 --  "folke/zen-mode.nvim",
