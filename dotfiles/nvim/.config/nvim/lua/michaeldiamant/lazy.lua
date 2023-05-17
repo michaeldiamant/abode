@@ -68,12 +68,16 @@ require("lazy").setup({
   "folke/neodev.nvim", -- Fix undefined global vim errors
   "christoomey/vim-tmux-navigator",
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons"}},
+
+  -- git
+  "tpope/vim-fugitive",
+  "tpope/vim-rhubarb",
+  "lewis6991/gitsigns.nvim",
 --  "folke/trouble.nvim",
 --  "folke/zen-mode.nvim",
 --  "github/copilot.vim",
 --  "mbbill/undotree",
 --  "theprimeagen/harpoon",
 --  "theprimeagen/refactoring.nvim",
---  "tpope/vim-fugitive",
 })
 
