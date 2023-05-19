@@ -81,3 +81,7 @@ require('gitsigns').setup {
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
+
+-- fugitve keymaps
+vim.keymap.set('n', "<leader>gs", ":Git<CR>")
+vim.keymap.set('n', "<leader>gm", ":GitMove <C-r>%")
