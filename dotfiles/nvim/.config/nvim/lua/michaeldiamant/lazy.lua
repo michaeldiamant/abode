@@ -15,9 +15,11 @@ require("lazy").setup({
   -- Prerequisites
   "nvim-lua/plenary.nvim",
   "windwp/nvim-autopairs", -- add parentheses on autocomplete
+  "nvim-tree/nvim-web-devicons",
 
   -- Color schemes
   { "rose-pine/neovim", name = "rose-pine" },
+  "sainnhe/everforest",
 
   -- cmp
   "hrsh7th/nvim-cmp", -- The completion plugin
@@ -67,7 +69,8 @@ require("lazy").setup({
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
   "folke/neodev.nvim", -- Fix undefined global vim errors
   "christoomey/vim-tmux-navigator",
-  { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons"}},
+  "vim-lualine/lualine.nvim",
+  "folke/trouble.nvim",
 
   -- git
   "tpope/vim-fugitive",
