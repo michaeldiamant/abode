@@ -67,6 +67,7 @@ require("lazy").setup({
   -- Misc
   "tpope/vim-commentary", -- Comment with gc
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
+  "tpope/vim-unimpaired",
   "folke/neodev.nvim", -- Fix undefined global vim errors
   "christoomey/vim-tmux-navigator",
   "vim-lualine/lualine.nvim",
