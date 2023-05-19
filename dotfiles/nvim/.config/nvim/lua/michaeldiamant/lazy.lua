@@ -73,6 +73,7 @@ require("lazy").setup({
   "nvim-lualine/lualine.nvim",
   "folke/trouble.nvim",
   "folke/zen-mode.nvim",
+  "theprimeagen/harpoon",
 
   -- git
   "tpope/vim-fugitive",
@@ -80,7 +81,6 @@ require("lazy").setup({
   "lewis6991/gitsigns.nvim",
 --  "github/copilot.vim",
 --  "mbbill/undotree",
---  "theprimeagen/harpoon",
 --  "theprimeagen/refactoring.nvim",
 })
 
