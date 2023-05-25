@@ -13,11 +13,24 @@ vim.keymap.set('n', '<leader>gd', builtin.lsp_references, {})
 vim.keymap.set('n', '<leader>ci', builtin.lsp_incoming_calls, {})
 vim.keymap.set('n', '<leader>co', builtin.lsp_outgoing_calls, {})
 
+local actions = require("telescope.actions")
+
 require('telescope').setup {
+  defaults = {
+    -- Truncate path when too long for picker.
+    path_display={ "smart" },
+  },
   pickers = {
     find_files = {
       -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
       find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    },
+    buffers = {
+      mappings = {
+        i = {
+          ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+        }
+      }
     },
     live_grep = {
       additional_args = function (_)
