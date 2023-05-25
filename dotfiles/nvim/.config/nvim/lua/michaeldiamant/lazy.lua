@@ -64,21 +64,34 @@ require("lazy").setup({
   "tpope/vim-dispatch",
   "JalaiAmitahl/maven-compiler.vim", -- Works for compile errors but not tests
 
-  -- Misc
+  -- Motions
   "tpope/vim-commentary", -- Comment with gc
-  "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
   "tpope/vim-unimpaired",
+  "tpope/vim-surround",
+
+  -- Misc
+  "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
   "folke/neodev.nvim", -- Fix undefined global vim errors
   "christoomey/vim-tmux-navigator",
   "nvim-lualine/lualine.nvim",
   "folke/trouble.nvim",
   "folke/zen-mode.nvim",
   "theprimeagen/harpoon",
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end, 
+  },
 
   -- git
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
   "lewis6991/gitsigns.nvim",
+  "pwntester/octo.nvim",
+
 --  "github/copilot.vim",
 --  "mbbill/undotree",
 --  "theprimeagen/refactoring.nvim",
