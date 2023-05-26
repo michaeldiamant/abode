@@ -119,34 +119,37 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    -- Go to definition in split from https://neovim.discourse.group/t/jump-to-definition-in-vertical-horizontal-split/2605/12
-    vim.keymap.set('n', 'gvd', ":vsp | lua vim.lsp.buf.definition()<CR>", opts)
-    vim.keymap.set('n', 'gsd', ":sp | lua vim.lsp.buf.definition()<CR>", opts)
+    local desc_opts = function(desc)
+      return { buffer = ev.buf, desc = desc }
+    end
 
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, desc_opts("Jump to symbol declaration"))
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, desc_opts("Jump to symbol definition"))
+    -- Go to definition in split from https://neovim.discourse.group/t/jump-to-definition-in-vertical-horizontal-split/2605/12
+    vim.keymap.set('n', 'gvd', ":vsp | lua vim.lsp.buf.definition()<CR>", desc_opts("Jump to symbol definition in vsp"))
+    vim.keymap.set('n', 'gsd', ":sp | lua vim.lsp.buf.definition()<CR>", desc_opts("Jump to symbol definition in sp"))
+
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, desc_opts("Show symbol hover info"))
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, desc_opts("List symbol implementations in quickfix"))
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, desc_opts("Show symbol signature info"))
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, desc_opts("Add LSP workspace folder"))
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, desc_opts("Remove LSP workspace folder"))
     vim.keymap.set('n', '<space>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    end, desc_opts("List LSP workspace list_workspace_folders"))
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, desc_opts("Jump to symbol's type definition"))
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc_opts("Rename all symbol references"))
     -- Prefer nvim-code-action-menu over default code action menu
     -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', ":CodeActionMenu <CR>", opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', ":CodeActionMenu <CR>", desc_opts("Toggle code action menu"))
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, desc_opts("List all symbol references in quickfix"))
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
-    end, opts)
-    vim.keymap.set('n', 'lr', ":LspRestart<CR>", opts)
-    vim.keymap.set('n', 'ci', vim.lsp.buf.incoming_calls, opts)
-    vim.keymap.set('n', 'co', vim.lsp.buf.outgoing_calls, opts)
-    vim.keymap.set('n', 'ws', vim.lsp.buf.workspace_symbol, opts)
+    end, desc_opts("Format attached buffer via LSP"))
+    vim.keymap.set('n', 'lr', ":LspRestart<CR>", desc_opts("Restart LSP clients"))
+    vim.keymap.set('n', 'ci', vim.lsp.buf.incoming_calls, desc_opts("List symbol call sites in quickfix"))
+    vim.keymap.set('n', 'co', vim.lsp.buf.outgoing_calls, desc_opts("List items called by symbol in quickfix"))
+    vim.keymap.set('n', 'ws', vim.lsp.buf.workspace_symbol, desc_opts("List workspace symbols in quickfix"))
   end,
 })
 
