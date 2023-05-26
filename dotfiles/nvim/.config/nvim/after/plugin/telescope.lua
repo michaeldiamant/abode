@@ -58,11 +58,28 @@ require('telescope').setup {
   }
 }
 
+local ts = require("telescope")
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+ts.load_extension('fzf')
 
-require("telescope").load_extension("recent_files")
-vim.api.nvim_set_keymap("n", "<Leader><Leader>",
+ts.load_extension("recent_files")
+vim.keymap.set("n", "<Leader><Leader>",
   [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
   {noremap = true, silent = true, desc = "Search recently opened files in Telescope" })
+
+local workspace_query = function(default_text, symbols)
+  local q = vim.fn.input("Query: ")
+  builtin.lsp_workspace_symbols({ query = q, default_text = default_text .. q, symbols = symbols })
+end
+
+vim.keymap.set("n", "<leader>ws",
+  function() workspace_query("", nil) end,
+  { desc = "Query for LSP workspace for all symbols" })
+
+vim.keymap.set("n", "<leader>cjp",
+  function() workspace_query("!jdt ", "class") end,
+  { desc = "Query for LSP project classes" })
+vim.keymap.set("n", "<leader>cjl",
+  function() workspace_query("jdt ", "class") end,
+  { desc = "Query for LSP library classes" })

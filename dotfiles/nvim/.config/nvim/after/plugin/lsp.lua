@@ -149,7 +149,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>lr', ":LspRestart<CR>", desc_opts("Restart LSP client"))
     vim.keymap.set('n', 'ci', vim.lsp.buf.incoming_calls, desc_opts("List symbol call sites in quickfix"))
     vim.keymap.set('n', 'co', vim.lsp.buf.outgoing_calls, desc_opts("List items called by symbol in quickfix"))
-    vim.keymap.set('n', 'ws', vim.lsp.buf.workspace_symbol, desc_opts("List workspace symbols in quickfix"))
+    -- Prefer Telescope for symbol search
+    -- vim.keymap.set('n', 'ws', vim.lsp.buf.workspace_symbol, desc_opts("List workspace symbols in quickfix"))
   end,
 })
 
