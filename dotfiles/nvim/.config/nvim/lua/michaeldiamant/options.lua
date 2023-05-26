@@ -43,3 +43,6 @@ vim.opt.smartcase = true -- if you include mixed case in your search, assumes yo
 
 -- vim-test
 vim.g["test#runner_commands"] = { "GradleTest", "MavenTest"}
+
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevelstart = 99 -- Prevent folding when opening new file
