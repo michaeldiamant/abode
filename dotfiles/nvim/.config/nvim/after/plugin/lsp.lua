@@ -151,4 +151,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 require("symbols-outline").setup()
-vim.keymap.set('n', '<leader>o', ':SymbolsOutline<CR>')
+vim.keymap.set('n', '<leader>o', ':SymbolsOutline<CR>', { desc = "Toggle LSP symbol outline" })

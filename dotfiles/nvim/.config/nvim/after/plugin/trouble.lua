@@ -3,7 +3,8 @@ require("trouble").setup({
   height = 10, -- height of the trouble list when position is top or bottom
   width = 50, -- width of the list when position is left or right
   icons = true, -- use devicons for filenames
-  mode = "workspace_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+  mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+  severity = nil, -- nil (ALL) or vim.diagnostic.severity.ERROR | WARN | INFO | HINT
   fold_open = "", -- icon used for open folds
   fold_closed = "", -- icon used for closed folds
   group = true, -- group results by file
@@ -20,6 +21,7 @@ require("trouble").setup({
     open_tab = { "<c-t>" }, -- open buffer in new tab
     jump_close = {"o"}, -- jump to the diagnostic and close the list
     toggle_mode = "m", -- toggle between "workspace" and "document" diagnostics mode
+    switch_severity = "s", -- switch "diagnostics" severity filter level to HINT / INFO / WARN / ERROR
     toggle_preview = "P", -- toggle auto_preview
     hover = "K", -- opens a small popup with the full multiline message
     preview = "p", -- preview the diagnostic location
