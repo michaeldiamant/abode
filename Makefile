@@ -5,6 +5,9 @@ fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
 
+json:
+	brew install jless
+
 java:
 	asdf plugin add java
 	asdf install java openjdk-20 
