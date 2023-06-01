@@ -19,10 +19,20 @@ neovim:
 	asdf install neovim latest 
 	asdf global neovim latest
 
+nodejs:
+	asdf plugin add nodejs
+	asdf install nodejs latest 
+	asdf global nodejs latest
+
 python:
 	asdf plugin add python
 	asdf install python latest 
 	asdf global python latest
+
+rust:
+	asdf plugin add rust
+	asdf install rust latest 
+	asdf global rust latest
 
 scmbreeze:
 	git clone --depth 1 https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze

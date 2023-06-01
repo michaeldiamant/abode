@@ -6,6 +6,8 @@ require("mason-lspconfig").setup {
   ---@type string[]
   ensure_installed = {
     "jdtls",
+    "jsonls",
+    "lemminx", -- XML
     "lua_ls",
   },
 
