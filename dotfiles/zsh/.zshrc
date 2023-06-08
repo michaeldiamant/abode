@@ -126,6 +126,5 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 for f in "${HOME}"/.zshrc.d/*.zshrc;
 do
-  echo "Sourcing $f"
   source "$f"
 done
