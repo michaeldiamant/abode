@@ -20,6 +20,7 @@ require("lazy").setup({
   -- Color schemes
   { "rose-pine/neovim", name = "rose-pine" },
   "sainnhe/everforest",
+  "folke/tokyonight.nvim",
 
   -- cmp
   "hrsh7th/nvim-cmp", -- The completion plugin

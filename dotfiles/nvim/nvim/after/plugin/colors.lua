@@ -1,5 +1,1 @@
-require('rose-pine').setup({
-    disable_background = true
-})
-
-vim.cmd.colorscheme("everforest")
+vim.cmd.colorscheme("tokyonight-night")
