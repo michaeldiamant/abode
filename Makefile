@@ -9,6 +9,7 @@ brew-first:
 brew-second:
 	brew install asdf \
 		fd \
+		gh \
 		jless \
 		intellij-idea \
 		ripgrep \
@@ -70,7 +71,8 @@ second: brew-second \
 
 second-macos:
 	brew install --cask alt-tab \
-		hyperkey
+		hyperkey \
+		keycastr
 
 # Thanks to https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
 first-macos:
