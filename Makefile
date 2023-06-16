@@ -12,6 +12,7 @@ brew-second:
 		jless \
 		intellij-idea \
 		ripgrep \
+		tmux \
 		tree
 	brew install --cask brave-browser
 
@@ -65,6 +66,7 @@ second: brew-second \
  nodejs \
  python \
  rust
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 second-macos:
 	brew install --cask alt-tab \
