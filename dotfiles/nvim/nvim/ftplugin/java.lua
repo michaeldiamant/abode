@@ -11,12 +11,12 @@ if vim.fn.has "mac" == 1 then
 end
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = os.getenv("HOME") .. "/workspace/java" .. project_name
+local workspace_dir = os.getenv("HOME") .. "/workspace/java/" .. project_name
 
 -- Does not work to set root_dir and I'm not sure why. Fails to reference JDK classes.
 -- local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 -- local root_dir = require("jdtls.setup").find_root(root_markers)
-local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw', 'pom.xml'}, { upward = true })[1])
 if root_dir == "" or root_dir == nil then
   return
 end
