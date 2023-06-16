@@ -8,11 +8,12 @@ brew-first:
 		stow
 brew-second:
 	brew install asdf \
+		fd \
+		jless \
+		intellij-idea \
+		ripgrep \
 		tree
-	brew install --cask karabiner-elements
-
-json:
-	brew install jless 
+	brew install --cask brave-browser
 
 java:
 	asdf plugin add java
@@ -20,7 +21,6 @@ java:
 	asdf install java openjdk-19 
 	asdf install java openjdk-18 
 	asdf install java openjdk-17 
-	asdf install java openjdk-11 
 	asdf global java openjdk-20
 
 neovim:
@@ -59,12 +59,41 @@ ohmyzsh-plugins:
 first: brew-first ohmyzsh ohmyzsh-plugins
 
 second: brew-second \
-# fzf \
-# scmbreeze \
- brew-second \
- java \
+ fzf \
+ scmbreeze \
  neovim \
  nodejs \
  python \
- rust \
- json
+ rust
+
+second-macos:
+	brew install --cask alt-tab \
+		hyperkey
+
+# Thanks to https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
+first-macos:
+	brew install autoconf \
+		bash \
+		binutils \
+		coreutils \
+		diffutils \
+		ed \
+		findutils \
+		flex \
+		gawk \
+    		gnu-indent \
+		gnu-sed \
+		gnu-tar \
+		gnu-which \
+		gpatch \
+		grep \
+		gzip \
+		less \
+		m4 \
+		make \
+		nano \
+		screen \
+		watch \
+		wdiff \
+		wget \
+		zip
