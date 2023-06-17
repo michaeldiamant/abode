@@ -1,0 +1,5 @@
+[user]
+	name = Michael-Diamant_tvlport
+	email = michael.diamant@travelport.com
+[pull]
+	rebase = false

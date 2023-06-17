@@ -3,3 +3,6 @@
 	email = michaeldiamant@users.noreply.github.com
 [pull]
 	rebase = false
+
+[includeIf "gitdir:~/dev/tvp/"]
+    path = ~/.gitconfig.tvp
