@@ -4,3 +4,4 @@ stow:
 		--stow tmux \
 		--stow zsh
 	stow --target=$$HOME/.config/ nvim
+	stow --target=$$HOME/Library/Application\ Support\/Alfred/ alfred

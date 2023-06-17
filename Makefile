@@ -25,6 +25,11 @@ java:
 	asdf install java openjdk-17 
 	asdf global java openjdk-20
 
+maven:
+	asdf plugin add maven
+	asdf install maven latest
+	asdf global maven latest
+
 neovim:
 	asdf plugin add neovim
 	asdf install neovim latest 
@@ -70,7 +75,8 @@ second: brew-second \
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 second-macos:
-	brew install --cask alt-tab \
+	brew install --cask alfred \
+		alt-tab \
 		hyperkey \
 		keycastr
 

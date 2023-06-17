@@ -19,3 +19,5 @@ Make manual system setting changes for improved experience:
 * Accessibility > Display:
   * Increase _Pointer size_.
   * Enable _Reduce motion_.
+
+Allow applications downloaded from anywhere: `sudo spctl --master-disable`.
