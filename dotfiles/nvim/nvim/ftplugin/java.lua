@@ -70,10 +70,6 @@ local config = {
               name = "JavaSE-19",
               path = os.getenv("HOME") .. "/.asdf/installs/java/openjdk-19",
             },
-            {
-              name = "JavaSE-11",
-              path = os.getenv("HOME") .. "/.asdf/installs/java/openjdk-11",
-            }
           }
         }
       },
