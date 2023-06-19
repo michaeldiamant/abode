@@ -11,7 +11,7 @@ brew-second:
 		fd \
 		gh \
 		jless \
-		intellij-idea \
+		intellij-idea-ce \
 		ripgrep \
 		tmux \
 		tree
@@ -79,6 +79,7 @@ second-macos:
 		alt-tab \
 		hyperkey \
 		keycastr
+	defaults write -g ApplePressAndHoldEnabled -bool false # Enable key repeating on hold.
 
 # Thanks to https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
 first-macos:
