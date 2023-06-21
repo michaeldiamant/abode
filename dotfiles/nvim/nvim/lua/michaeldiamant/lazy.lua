@@ -44,6 +44,7 @@ require("lazy").setup({
   "mfussenegger/nvim-jdtls",
   "weilbith/nvim-code-action-menu",
   "simrat39/symbols-outline.nvim",
+  "RRethy/vim-illuminate", -- Highlight LSP symbol references under cursor
 
   -- Treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
