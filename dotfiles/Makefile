@@ -1,6 +1,7 @@
 stow:
 	stow --target=$$HOME \
 		--stow git \
+		--stow intellij \
 		--stow tmux \
 		--stow zsh
 	stow --target=$$HOME/.config/ nvim
