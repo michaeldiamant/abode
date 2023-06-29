@@ -9,6 +9,7 @@ brew-first:
 brew-second:
 	brew install asdf \
 		fd \
+		jq \
 		gh \
 		jless \
 		intellij-idea-ce \
