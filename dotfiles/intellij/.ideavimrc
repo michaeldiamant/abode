@@ -1,3 +1,89 @@
-set relativenumber
 set number
+set relativenumber
+set scrolloff=10
+set visualbell
+set showmode
+set showcmd
 
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Set conflicting handler preferences
+sethandler <C-i> n-v-i:vim
+sethandler <C-o> n-v-i:vim
+sethandler <C-d> n-v-i:vim
+sethandler <C-u> n-v-i:vim
+sethandler <C-h> n-v-i:vim
+sethandler <C-j> n-v-i:vim
+sethandler <C-k> n-v-i:vim
+sethandler <C-l> n-v-i:vim
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \s :action IdeaVim.ReloadVimRc.reload<CR>
+
+let mapleader=" "
+
+set commenary " https://github.com/tpope/vim-commentary
+set surround " https://github.com/tpope/vim-surround
+set highlightedyank
+
+" Center screen when jumping to next match
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
+
+" Center screen when moving up and down
+nnoremap <C-u> <C-u>zz
+nnoremap <C-o> <C-d>zz
+vnoremap <C-u> <C-u>zz
+vnoremap <C-o> <C-d>zz
+
+" Pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+
+" Code navigation
+nnoremap \f :action ActivateFindToolWindow<cr>
+nnoremap \p :action ActivateProblemsViewToolWindow<cr>
+nnoremap \t :action ActivateTerminalToolWindow<cr>
+nnoremap \r :action ActivateRunToolWindow<cr>
+
+nnoremap <leader>j :action MethodDown<cr>
+nnoremap <leader>k :action MethodUp<cr>
+nnoremap \f :action ActivateFindToolWindow<cr>
+nnoremap ci :action ShowUsages<cr>
+nnoremap cI :action FindUsages<cr>
+nnoremap <leader>hc :action CallHierarchy<cr>
+nnoremap <leader>ht :action TypeHierarchy<cr>
+nnoremap <leader>c :action GotoClass<cr>
+nnoremap <leader>ff :action GotoFile<cr>
+nnoremap <leader>fg :action FindInPath<cr>
+nnoremap <leader>fg :action FindInPath<cr>
+nnoremap gd :action GotoDeclaration<cr>
+nnoremap gD :action GotoTypeDeclaration<cr>
+noremap <leader>i :action GotoImplementation<cr>
+nnoremap <leader>a :action ShowIntentionActions<cr>
+nnoremap <leader><S-e> :action GotoPreviousError<cr>
+nnoremap <leader>e :action GotoNextError<cr>
+
+" Common actions
+nnoremap <leader>oi :action OrganizeImports<cr>
+nnoremap <leader>r :action RunClass<cr>
+nnoremap <leader>n :action RenameElement<cr>
+
+" Move lines
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
+vnoremap < <gv
+vnoremap > >gv
+
+" Built-in navigation to navigated items works better
+nmap <c-o> <Action>(Back)
+nmap <c-i> <Action>(Forward)
+
+nnoremap <cr> :action<C-p>
