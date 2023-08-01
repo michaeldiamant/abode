@@ -9,6 +9,7 @@ require("mason-lspconfig").setup {
     "jsonls",
     "lemminx", -- XML
     "lua_ls",
+    "pyright",
   },
 
   -- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
