@@ -16,7 +16,9 @@ brew-second:
 		ripgrep \
 		tmux \
 		tree
-	brew install --cask brave-browser
+	brew install --cask brave-browser \
+		dbeaver-community \
+		postman
 
 java:
 	asdf plugin add java
