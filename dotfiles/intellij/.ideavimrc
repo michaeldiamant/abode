@@ -25,9 +25,14 @@ nnoremap \s :action IdeaVim.ReloadVimRc.reload<CR>
 
 let mapleader=" "
 
-set commenary " https://github.com/tpope/vim-commentary
+set commentary " https://github.com/tpope/vim-commentary
 set surround " https://github.com/tpope/vim-surround
 set highlightedyank
+
+" Copy into system clipboard
+nnoremap <C-y> "+y
+nnoremap <C-yy> "+yy
+vnoremap <C-y> "+y
 
 " Center screen when jumping to next match
 nnoremap n nzz
@@ -73,7 +78,8 @@ nnoremap <leader>e :action GotoNextError<cr>
 
 " Common actions
 nnoremap <leader>oi :action OrganizeImports<cr>
-nnoremap <leader>r :action RunClass<cr>
+nnoremap <leader>r :action Run<cr>
+nnoremap <leader><S-r> :action RunClass<cr>
 nnoremap <leader>n :action RenameElement<cr>
 
 " Move lines
