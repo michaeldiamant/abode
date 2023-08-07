@@ -74,8 +74,9 @@ second: brew-second \
  neovim \
  nodejs \
  python \
- rust
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ rust \
+ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
+ npm install -g json-diff
 
 second-macos:
 	brew install --cask alfred \
