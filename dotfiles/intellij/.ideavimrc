@@ -55,7 +55,7 @@ nnoremap <C-j> <C-w>j
 " Code navigation
 nnoremap \f :action ActivateFindToolWindow<cr>
 nnoremap \p :action ActivateProblemsViewToolWindow<cr>
-nnoremap \t :action ActivateTerminalToolWindow<cr>
+nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \r :action ActivateRunToolWindow<cr>
 
 nnoremap <leader>j :action MethodDown<cr>
@@ -75,6 +75,10 @@ noremap <leader>i :action GotoImplementation<cr>
 nnoremap <leader>a :action ShowIntentionActions<cr>
 nnoremap <leader><S-e> :action GotoPreviousError<cr>
 nnoremap <leader>e :action GotoNextError<cr>
+
+" Wrap text with https://plugins.jetbrains.com/plugin/7234-wrap-to-column
+nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
 " Common actions
 nnoremap <leader>oi :action OrganizeImports<cr>

@@ -11,8 +11,9 @@ brew-second:
 		fd \
 		jq \
 		gh \
-		jless \
 		intellij-idea-ce \
+		jless \
+		lf \
 		ripgrep \
 		tmux \
 		tree
