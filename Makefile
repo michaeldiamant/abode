@@ -8,11 +8,14 @@ brew-first:
 		stow
 brew-second:
 	brew install asdf \
+		awscli \
+		derailed/k9s/k9s \
 		fd \
 		jq \
 		gh \
 		intellij-idea-ce \
 		jless \
+		kubectl \
 		lf \
 		ripgrep \
 		tmux \
