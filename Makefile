@@ -7,7 +7,8 @@ brew-first:
 		git \
 		stow
 brew-second:
-	brew install asdf \
+	brew install act \
+		asdf \
 		awscli \
 		derailed/k9s/k9s \
 		fd \
