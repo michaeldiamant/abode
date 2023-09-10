@@ -85,3 +85,25 @@ require('gitsigns').setup {
 -- fugitve keymaps
 vim.keymap.set('n', "<leader>gs", ":Git<CR>")
 vim.keymap.set('n', "<leader>gm", ":GitMove <C-r>%")
+local md_fugitive = vim.api.nvim_create_augroup("md_fugitive", {})
+
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("BufWinEnter", {
+    group = md_fugitive,
+    pattern = "*",
+    callback = function()
+        if vim.bo.ft ~= "fugitive" then
+            return
+        end
+
+        local bufnr = vim.api.nvim_get_current_buf()
+        local opts = {buffer = bufnr, remap = false}
+
+        vim.keymap.set("n", "<leader>P", function()
+            vim.cmd.Git({'pull'})
+        end, opts)
+
+         vim.keymap.set("n", "<leader>p", ":Git push -u origin", opts);
+         vim.keymap.set("n", "<leader>a", ":Git add .<CR>", opts);
+    end,
+})
