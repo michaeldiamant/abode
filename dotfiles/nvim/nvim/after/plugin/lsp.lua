@@ -141,7 +141,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, desc_opts("List LSP workspace list_workspace_folders"))
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, desc_opts("Jump to symbol's type definition"))
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc_opts("Rename all symbol references"))
+    vim.keymap.set('n', '<space>n', vim.lsp.buf.rename, desc_opts("Rename all symbol references"))
     -- Prefer nvim-code-action-menu over default code action menu
     -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', ":CodeActionMenu <CR>", desc_opts("Toggle code action menu"))
