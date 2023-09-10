@@ -49,7 +49,6 @@ require("lazy").setup({
   -- Treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   "HiPhish/nvim-ts-rainbow2", -- Color corresponding parentheses
-  "nvim-treesitter/playground", -- View treesitter info directly in nvim
   "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
 
   -- Telescope
