@@ -19,6 +19,7 @@ brew-second:
 		kubectl \
 		lf \
 		ripgrep \
+		shellcheck \
 		tmux \
 		tree
 	brew install --cask brave-browser \
