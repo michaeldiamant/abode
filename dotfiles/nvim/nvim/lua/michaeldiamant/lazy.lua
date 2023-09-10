@@ -55,6 +55,7 @@ require("lazy").setup({
   "nvim-telescope/telescope.nvim",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   "smartpde/telescope-recent-files",
+  "nvim-telescope/telescope-ui-select.nvim",
 
   -- Sessions
   "tpope/vim-obsession",
@@ -84,8 +85,9 @@ require("lazy").setup({
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-    end, 
+    end,
   },
+  "stevearc/dressing.nvim",
 
   -- git
   "tpope/vim-fugitive",
