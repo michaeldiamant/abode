@@ -6,3 +6,5 @@
 
 [includeIf "gitdir:~/dev/tvp/"]
     path = ~/.gitconfig.tvp
+[push]
+	autoSetupRemote = true
