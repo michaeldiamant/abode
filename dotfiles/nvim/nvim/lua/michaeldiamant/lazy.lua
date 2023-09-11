@@ -70,6 +70,7 @@ require("lazy").setup({
   "tpope/vim-commentary", -- Comment with gc
   "tpope/vim-unimpaired",
   "tpope/vim-surround",
+  "jinh0/eyeliner.nvim", -- Like quick-scope, but in lua
 
   -- Misc
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
