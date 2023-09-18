@@ -26,6 +26,9 @@ brew-second:
 		dbeaver-community \
 		postman
 
+helm:
+	asdf plugin add helm
+	asdf install helm 3.12.3
 java:
 	asdf plugin add java
 	asdf install java openjdk-20 
@@ -77,10 +80,12 @@ first: brew-first ohmyzsh ohmyzsh-plugins
 second: brew-second \
  fzf \
  scmbreeze \
+ java \
  neovim \
  nodejs \
  python \
  rust \
+ helm \
  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
  npm install -g json-diff
 
