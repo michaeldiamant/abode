@@ -29,6 +29,7 @@ brew-second:
 helm:
 	asdf plugin add helm
 	asdf install helm 3.12.3
+	helm plugin install https://github.com/databus23/helm-diff
 java:
 	asdf plugin add java
 	asdf install java openjdk-20 
