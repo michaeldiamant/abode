@@ -36,6 +36,7 @@ java:
 	asdf install java openjdk-19 
 	asdf install java openjdk-18 
 	asdf install java openjdk-17 
+	asdf install java corretto-8.382.05.1
 	asdf global java openjdk-20
 
 maven:
