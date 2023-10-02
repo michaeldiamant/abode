@@ -14,6 +14,7 @@ brew-second:
 		fd \
 		jq \
 		gh \
+		gron \
 		intellij-idea-ce \
 		jless \
 		kubectl \
@@ -21,7 +22,8 @@ brew-second:
 		ripgrep \
 		shellcheck \
 		tmux \
-		tree
+		tree \
+		yamllint
 	brew install --cask brave-browser \
 		dbeaver-community \
 		postman
