@@ -70,9 +70,10 @@ nnoremap cI :action FindUsages<cr>
 nnoremap <leader>hc :action CallHierarchy<cr>
 nnoremap <leader>ht :action TypeHierarchy<cr>
 nnoremap <leader>c :action GotoClass<cr>
+nnoremap <leader>fs :action GotoSymbol<cr>
 nnoremap <leader>ff :action GotoFile<cr>
 nnoremap <leader>fg :action FindInPath<cr>
-nnoremap <leader>fg :action FindInPath<cr>
+nnoremap <leader>fS :action FileStructurePopup<cr>
 nnoremap gd :action GotoDeclaration<cr>
 nnoremap gD :action GotoTypeDeclaration<cr>
 noremap <leader>i :action GotoImplementation<cr>
