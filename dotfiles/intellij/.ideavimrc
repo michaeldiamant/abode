@@ -52,6 +52,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
+nnoremap <C-m> :action MaximizeEditorInSplit<CR>
 
 " Switch between projects
 nnoremap <leader>w :action WindowMenu<cr>
@@ -65,8 +66,8 @@ nnoremap \r :action ActivateRunToolWindow<cr>
 nnoremap <leader>j :action MethodDown<cr>
 nnoremap <leader>k :action MethodUp<cr>
 nnoremap \f :action ActivateFindToolWindow<cr>
-nnoremap ci :action ShowUsages<cr>
-nnoremap cI :action FindUsages<cr>
+nnoremap cu :action ShowUsages<cr>
+nnoremap cU :action FindUsages<cr>
 nnoremap <leader>hc :action CallHierarchy<cr>
 nnoremap <leader>ht :action TypeHierarchy<cr>
 nnoremap <leader>c :action GotoClass<cr>
@@ -101,4 +102,12 @@ vnoremap > >gv
 nmap <c-o> <Action>(Back)
 nmap <c-i> <Action>(Forward)
 
-nnoremap <cr> :action<C-p>
+" Diff
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap <leader>hd :action Vcs.ShowDiffChangedLines<cr>
+nnoremap <leader>hD :action Compare.SameVersion<cr>
+nnoremap <leader>hr :action Vcs.RollbackChangedLines<cr>
+
+" Don't yank overridden text when pasting in visual mode
+vnoremap <leader>p "_dP

@@ -10,6 +10,7 @@ brew-second:
 	brew install act \
 		asdf \
 		awscli \
+		difftastic \
 		derailed/k9s/k9s \
 		fd \
 		jq \
@@ -26,7 +27,9 @@ brew-second:
 		yamllint
 	brew install --cask brave-browser \
 		dbeaver-community \
-		postman
+		gpg-suite \
+		postman \
+		redisinsight
 
 helm:
 	asdf plugin add helm
