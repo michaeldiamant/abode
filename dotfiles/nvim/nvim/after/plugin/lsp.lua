@@ -144,7 +144,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, desc_opts("Rename all symbol references"))
     -- Prefer nvim-code-action-menu over default code action menu
     -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', ":CodeActionMenu <CR>", desc_opts("Toggle code action menu"))
+    vim.keymap.set({ 'n', 'v' }, '<leader>a', ":CodeActionMenu <CR>", desc_opts("Toggle code action menu"))
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, desc_opts("List all symbol references in quickfix"))
     vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }

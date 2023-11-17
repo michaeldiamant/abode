@@ -66,6 +66,7 @@ nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \b :action ActivateBuildToolWindow<cr>
 nnoremap <leader>b :action CompileDirty<cr>
 nnoremap <leader>S :action SelectInProjectView<cr>
+nnoremap <leader>o :action ActivateStructureToolWindow<cr>
 
 nnoremap <leader>j :action MethodDown<cr>
 nnoremap <leader>k :action MethodUp<cr>
