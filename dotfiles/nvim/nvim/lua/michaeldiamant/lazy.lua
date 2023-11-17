@@ -73,6 +73,7 @@ require("lazy").setup({
   "jinh0/eyeliner.nvim", -- Like quick-scope, but in lua
 
   -- Misc
+  "numToStr/FTerm.nvim",
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
   "folke/neodev.nvim", -- Fix undefined global vim errors
   "christoomey/vim-tmux-navigator",
