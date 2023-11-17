@@ -62,6 +62,10 @@ nnoremap \f :action ActivateFindToolWindow<cr>
 nnoremap \p :action ActivateProblemsViewToolWindow<cr>
 nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \r :action ActivateRunToolWindow<cr>
+nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
+nnoremap \b :action ActivateBuildToolWindow<cr>
+nnoremap <leader>b :action CompileDirty<cr>
+nnoremap <leader>S :action SelectInProjectView<cr>
 
 nnoremap <leader>j :action MethodDown<cr>
 nnoremap <leader>k :action MethodUp<cr>
@@ -107,6 +111,7 @@ nnoremap ]c :action VcsShowNextChangeMarker<cr>
 nnoremap [c :action VcsShowPrevChangeMarker<cr>
 nnoremap <leader>hd :action Vcs.ShowDiffChangedLines<cr>
 nnoremap <leader>hD :action Compare.SameVersion<cr>
+nnoremap <leader>gb :action Git.CompareWithBranch<cr>
 nnoremap <leader>hr :action Vcs.RollbackChangedLines<cr>
 
 " Don't yank overridden text when pasting in visual mode
