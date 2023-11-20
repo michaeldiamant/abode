@@ -74,6 +74,11 @@ terraform:
 	asdf install terraform latest
 	asdf global terraform latest
 
+terragrunt:
+	asdf plugin-add terragrunt https://github.com/ohmer/asdf-terragrunt
+	asdf install terragrunt latest
+	asdf global terragrunt latest
+
 scmbreeze:
 	git clone --depth 1 https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 	sh ~/.scm_breeze/install.sh
