@@ -69,6 +69,11 @@ rust:
 	asdf install rust latest 
 	asdf global rust latest
 
+terraform:
+	asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.github
+	asdf install terraform latest
+	asdf global terraform latest
+
 scmbreeze:
 	git clone --depth 1 https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 	sh ~/.scm_breeze/install.sh
