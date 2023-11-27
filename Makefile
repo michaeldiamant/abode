@@ -37,12 +37,13 @@ helm:
 	helm plugin install https://github.com/databus23/helm-diff
 java:
 	asdf plugin add java
+	asdf install java openjdk-21
 	asdf install java openjdk-20 
 	asdf install java openjdk-19 
 	asdf install java openjdk-18 
 	asdf install java openjdk-17 
 	asdf install java corretto-8.382.05.1
-	asdf global java openjdk-20
+	asdf global java openjdk-21
 
 maven:
 	asdf plugin add maven
@@ -83,6 +84,10 @@ scmbreeze:
 	git clone --depth 1 https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 	sh ~/.scm_breeze/install.sh
 
+fonts:
+	brew tap homebrew/cask-fonts
+	brew install --cask font-jetbrains-mono
+
 ohmyzsh:
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -103,6 +108,8 @@ second: brew-second \
  python \
  rust \
  helm \
+ terraform \
+ terragrunt \
  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
  npm install -g json-diff
 
