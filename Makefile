@@ -20,6 +20,7 @@ brew-second:
 		jless \
 		kubectl \
 		lf \
+		python-yq \
 		ripgrep \
 		shellcheck \
 		tmux \
