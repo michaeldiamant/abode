@@ -77,6 +77,9 @@ require('gitsigns').setup {
     map('n', '<leader>hD', function() gs.diffthis('~') end)
     map('n', '<leader>td', gs.toggle_deleted)
 
+    vim.keymap.set('n', 'gco', ':Git checkout ')
+    vim.keymap.set('n', 'gpl', ':Git pull origin<CR>')
+
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end

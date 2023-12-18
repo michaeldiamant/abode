@@ -52,7 +52,7 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
 
   -- Telescope
-  "nvim-telescope/telescope.nvim",
+  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-telescope/telescope-live-grep-args.nvim" }},
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   "smartpde/telescope-recent-files",
   "nvim-telescope/telescope-ui-select.nvim",

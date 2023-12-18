@@ -126,14 +126,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
       return { buffer = ev.buf, desc = desc }
     end
 
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, desc_opts("Jump to symbol declaration"))
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, desc_opts("Jump to symbol definition"))
     -- Go to definition in split from https://neovim.discourse.group/t/jump-to-definition-in-vertical-horizontal-split/2605/12
     vim.keymap.set('n', 'gvd', ":vsp | lua vim.lsp.buf.definition()<CR>", desc_opts("Jump to symbol definition in vsp"))
     vim.keymap.set('n', 'gsd', ":sp | lua vim.lsp.buf.definition()<CR>", desc_opts("Jump to symbol definition in sp"))
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, desc_opts("Show symbol hover info"))
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, desc_opts("List symbol implementations in quickfix"))
     vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, desc_opts("Show symbol signature info"))
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, desc_opts("Add LSP workspace folder"))
     vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, desc_opts("Remove LSP workspace folder"))
@@ -150,9 +147,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, desc_opts("Format attached buffer via LSP"))
     vim.keymap.set('n', '<leader>lr', ":LspRestart<CR>", desc_opts("Restart LSP client"))
-    vim.keymap.set('n', 'cu', vim.lsp.buf.incoming_calls, desc_opts("List symbol call sites in quickfix"))
-    vim.keymap.set('n', 'co', vim.lsp.buf.outgoing_calls, desc_opts("List items called by symbol in quickfix"))
-    -- Prefer Telescope for symbol search
+    -- Prefer Telescope for these actions
+    -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, desc_opts("List symbol implementations in quickfix"))
+    -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, desc_opts("Jump to symbol declaration"))
+    -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, desc_opts("Jump to symbol definition"))
+    -- vim.keymap.set('n', 'cu', vim.lsp.buf.incoming_calls, desc_opts("List symbol call sites in quickfix"))
+    -- vim.keymap.set('n', 'co', vim.lsp.buf.outgoing_calls, desc_opts("List items called by symbol in quickfix"))
     -- vim.keymap.set('n', 'ws', vim.lsp.buf.workspace_symbol, desc_opts("List workspace symbols in quickfix"))
   end,
 })

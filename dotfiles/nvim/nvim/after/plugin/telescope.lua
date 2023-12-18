@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files in Telescope" })
+-- vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = "Live grep in Telescope" })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live grep in Telescope" })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Search buffers in Telescope" })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Search keymaps in Telescope" })
@@ -11,11 +12,20 @@ end, { desc = "Run grep and send results to Telescope" })
 vim.keymap.set('n', '<leader>fh', builtin.command_history, { desc = "Search command history in Telescope" })
 vim.keymap.set('n', '<leader>fc', builtin.command_history, { desc = "Search commands in Telescope" })
 
-vim.keymap.set('n', '<leader>gd', builtin.lsp_references, { desc = "List symbol references in Telescope" })
-vim.keymap.set('n', '<leader>ci', builtin.lsp_incoming_calls, { desc = "List symbol incoming calls in Telescope" })
-vim.keymap.set('n', '<leader>co', builtin.lsp_outgoing_calls, { desc = "List symbol outgoing calls in Telescope" })
+vim.keymap.set('n', 'cu', builtin.lsp_references, { desc = "List symbol references in Telescope" })
+vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = "Jump to symbol definition"})
+vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, { desc = "Jump to symbol type definition"})
+vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols, { desc = "List workspace symbols"})
+vim.keymap.set('n', '<leader>fS', builtin.lsp_document_symbols, { desc = "List document symbols"})
+vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = "Jump to symbol implementation"})
+
+vim.keymap.set('n', '\\t', builtin.diagnostics, { desc = "List document diagnostics"})
+
+-- vim.keymap.set('n', 'cu', builtin.lsp_incoming_calls, { desc = "List symbol incoming calls in Telescope" })
+-- vim.keymap.set('n', 'co', builtin.lsp_outgoing_calls, { desc = "List symbol outgoing calls in Telescope" })
 
 local actions = require("telescope.actions")
+local lga_actions = require("telescope-live-grep-args.actions")
 
 require('telescope').setup {
   defaults = {
@@ -57,7 +67,26 @@ require('telescope').setup {
     },
     ["ui-select"] = {
       require("telescope.themes").get_dropdown{}
-    }
+    },
+    live_grep_args = {
+      auto_quoting = true, -- enable/disable auto-quoting
+      -- define mappings, e.g.
+      mappings = { -- extend mappings
+        i = {
+          ["<C-k>"] = lga_actions.quote_prompt(),
+          ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+        },
+      },
+      vimgrep_arguments = {
+        "rg",
+        "--hidden",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case"}
+      }
   }
 }
 
@@ -66,6 +95,7 @@ ts.load_extension("ui-select")
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 ts.load_extension('fzf')
+ts.load_extension("live_grep_args")
 
 ts.load_extension("recent_files")
 vim.keymap.set("n", "<Leader><Leader>",
