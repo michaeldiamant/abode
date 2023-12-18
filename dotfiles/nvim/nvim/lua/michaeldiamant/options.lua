@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+# vim.opt.guicursor = "" # Keep block cursor in insert mode.
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
