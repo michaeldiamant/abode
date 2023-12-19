@@ -386,6 +386,17 @@
 			<key>Version</key>
 			<integer>0</integer>
 		</dict>
+		<key>0x6b-0x100000-0x28</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Label</key>
+			<string></string>
+			<key>Text</key>
+			<string>clear\n</string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
 		<key>0x6b-0x80000-0x28</key>
 		<dict>
 			<key>Action</key>
