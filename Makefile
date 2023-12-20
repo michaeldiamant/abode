@@ -35,5 +35,8 @@ second:	fzf \
 	asdf install
 	npm install -g json-diff
 
-second-macos: defaults write -g ApplePressAndHoldEnabled -bool false # Enable key repeating on hold.
+second-macos:
+	defaults write -g ApplePressAndHoldEnabled -bool false # Enable key repeating on hold.
+	defaults write -g InitialKeyRepeat -int 15
+	defaults write -g KeyRepeat -int 2
 
