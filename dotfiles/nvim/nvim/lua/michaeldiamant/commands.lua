@@ -6,5 +6,5 @@ vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank({timeout=500})]]
 -- * For tmux integration: `set -g focus-events on`
 vim.cmd[[:au FocusLost * :wa]]
 
--- Refresh stale buffers when file system changed outside of nvim.
+-- Reload stale buffers when file system changed outside of nvim.
 vim.cmd[[:set autoread]]
