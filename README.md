@@ -7,9 +7,7 @@ Steps to follow:
 * Confirm oh-my-zsh is in working order.
 * Run `p10k configure` to install recommended fonts.
 * `cd dotfiles && make` to add symbolic links via stow.
-* `make first-macos` to switch from FreeBSD to GNU-based tooling (e.g. grep).
 * `make second` to install more dependencies.
-* `make second-macos` to install macOS-specific dependencies.
 * Manually configure some apps:
   * Most apps require security exceptions. Open each app and follow prompts.
   * AltTab, Hyperkey - Not sure where config lives. Must configure in UI.
