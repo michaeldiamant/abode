@@ -117,10 +117,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Source config _after_ zsh init to ensure my config takes precedence. If run outside of the hook, some overrides (like bindkey) won't work.
-function zvm_after_init() {
-  for f in "${HOME}"/.zshrc.d/*.zshrc;
-  do
-    source "$f"
-  done
-}
+for f in "${HOME}"/.zshrc.d/*.zshrc;
+do
+  source "$f"
+done

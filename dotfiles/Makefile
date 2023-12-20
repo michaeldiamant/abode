@@ -1,4 +1,5 @@
 stow:
+	stow --target=$$HOME asdf 
 	stow --target=$$HOME brew
 	stow --target=$$HOME git
 	stow --target=$$HOME ideavim
