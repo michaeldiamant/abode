@@ -6,31 +6,8 @@ brew-first:
 	brew install \
 		git \
 		stow
-brew-second:
-	brew install act \
-		asdf \
-		awscli \
-		difftastic \
-		derailed/k9s/k9s \
-		fd \
-		jq \
-		gh \
-		gron \
-		intellij-idea-ce \
-		jless \
-		kubectl \
-		lf \
-		python-yq \
-		ripgrep \
-		shellcheck \
-		tmux \
-		tree \
-		yamllint
-	brew install --cask brave-browser \
-		dbeaver-community \
-		gpg-suite \
-		postman \
-		redisinsight
+	make -C dotfiles/ 
+	brew bundle --file=~/.Brewfile
 
 helm:
 	asdf plugin add helm
@@ -85,10 +62,6 @@ scmbreeze:
 	git clone --depth 1 https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 	sh ~/.scm_breeze/install.sh
 
-fonts:
-	brew tap homebrew/cask-fonts
-	brew install --cask font-jetbrains-mono
-
 ohmyzsh:
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -100,8 +73,7 @@ ohmyzsh-plugins:
 
 first: brew-first ohmyzsh ohmyzsh-plugins
 
-second: brew-second \
- fzf \
+second: fzf \
  scmbreeze \
  java \
  neovim \
@@ -115,36 +87,5 @@ second: brew-second \
  npm install -g json-diff
 
 second-macos:
-	brew install --cask alfred \
-		alt-tab \
-		hyperkey \
-		keycastr
 	defaults write -g ApplePressAndHoldEnabled -bool false # Enable key repeating on hold.
 
-# Thanks to https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
-first-macos:
-	brew install autoconf \
-		bash \
-		binutils \
-		coreutils \
-		diffutils \
-		ed \
-		findutils \
-		flex \
-		gawk \
-    		gnu-indent \
-		gnu-sed \
-		gnu-tar \
-		gnu-which \
-		gpatch \
-		grep \
-		gzip \
-		less \
-		m4 \
-		make \
-		nano \
-		screen \
-		watch \
-		wdiff \
-		wget \
-		zip
