@@ -38,8 +38,3 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
-
--- Makes statusline transparent.
--- https://github.com/nvim-lualine/lualine.nvim/issues/813#issuecomment-1863312803
-vim.cmd("highlight lualine_c_inactive guibg=NONE")
-vim.cmd("highlight lualine_c_normal guibg=NONE")
