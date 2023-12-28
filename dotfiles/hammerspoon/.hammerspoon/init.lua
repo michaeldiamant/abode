@@ -8,7 +8,9 @@ hs.alert.show("Config loaded")
 local VimMode = hs.loadSpoon('VimMode')
 local vim = VimMode:new()
 
+-- Take app name from Activity Monitor.
 vim:disableForApp('iTerm')
+vim:disableForApp('IntelliJ IDEA')
 --  :enterWithSequence('jk')
 
 vim:bindHotKeys({ enter = {{'ctrl'}, ';'} })
