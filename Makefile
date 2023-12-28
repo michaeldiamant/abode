@@ -13,11 +13,6 @@ brew-first:
 asdf-plugins:
 	cat ~/.tool-plugins | tr -s ' ' | cut -d' ' -f1,2 | xargs -I{} /bin/bash -c "asdf plugin add {}"
 
-hammerspoon-spoons:
-	mkdir -p ~/.hammerspoon/Spoons
-	git clone https://github.com/dbalatero/VimMode.spoon \
-  ~/.hammerspoon/Spoons/VimMode.spoon
-
 scmbreeze:
 	git clone --depth 1 https://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 	sh ~/.scm_breeze/install.sh

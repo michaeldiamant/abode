@@ -39,18 +39,18 @@ lspconfig.lua_ls.setup {
         -- (most likely LuaJIT in the case of Neovim)
         version = 'LuaJIT',
       },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {
-          'vim',
-          'require'
-        },
-      },
       workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        -- How `library` is configured to get API docs for nvim API:
+        -- * Using neodev in place of commented out config below.
+        -- * Kludge - Versioning EmmyLua.spoon source in this repo because attempts (like string.format below) failed to work.
+        --   library = {
+        --     vim.api.nvim_get_runtime_file("", true),
+        --     string.format("%s/.hammerspoon/Spoons/EmmyLua.spoon/annotations", os.getenv 'HOME')) 
+        --   }
+
         -- Workaround described in https://github.com/LunarVim/LunarVim/issues/4049
         checkThirdParty = false,
+        --  
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
