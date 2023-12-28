@@ -74,6 +74,7 @@ require("lazy").setup({
 
   -- Misc
   "shortcuts/no-neck-pain.nvim",
+  "szw/vim-maximizer",
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
   "folke/neodev.nvim", -- Fix undefined global vim errors
   "christoomey/vim-tmux-navigator",
