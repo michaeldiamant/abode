@@ -40,11 +40,23 @@ local VimMode = hs.loadSpoon('VimMode')
 local vim = VimMode:new()
 
 local k = hs.hotkey.modal.new('shift', 'space')
-function k:entered() hs.alert 'Entered mode' end
+local brightnessShift = 10
+function k:entered()
+  print("brightness = " .. hs.brightness.get())
+  hs.brightness.set(hs.brightness.get() - brightnessShift)
+  print("brightness after = " .. hs.brightness.get())
+  hs.alert 'Entered mode'
+end
 
-function k:exited() hs.alert 'Exited mode' end
+function k:exited()
+  hs.brightness.set(hs.brightness.get() + brightnessShift)
+  hs.alert 'Exited mode'
+end
 
 k:bind('', 'escape', function() k:exit() end)
+k:bind('', 'w', function()
+  hs.grid.show()
+end)
 k:bind('', 'C', nil, function()
   for _, arr in ipairs(hyperAppShortcuts) do
     if (arr[1] == 'C') then
