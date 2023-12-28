@@ -82,14 +82,6 @@ require("lazy").setup({
   "folke/trouble.nvim",
   "folke/zen-mode.nvim",
   "theprimeagen/harpoon",
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-  },
   "stevearc/dressing.nvim",
 
   -- git
