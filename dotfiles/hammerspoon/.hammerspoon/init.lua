@@ -30,18 +30,54 @@ local hyperAppShortcuts = {
 }
 local hyper = { "cmd", "alt", "ctrl", "shift" }
 
+local function rgba(r, g, b, a)
+  a = a or 1.0
+
+  return {
+    red = r / 255,
+    green = g / 255,
+    blue = b / 255,
+    alpha = a
+  }
+end
+
+-- Define your layers here, as well as the foreground/background of the
+-- layer indicator.
+--
+-- see http://colorsafe.co for some color combos
+local layers = {
+  default = {
+    name = "qwerty",
+    background = rgba(187, 187, 187),
+    foreground = rgba(46, 52, 59),
+  },
+  raise = {
+    name = "raise",
+    background = rgba(163, 209, 255),
+    foreground = rgba(15, 72, 128),
+  }
+}
+
+-- load ~/.hammerspoon/layer-indicator.lua
+local LayerIndicator = require("layer-indicator")
+
+-- create a layer indicator
+local indicator = LayerIndicator:new(layers.default)
+
+
 hs.hotkey.bind(hyper, "r", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")
 
-hs.loadSpoon('EmmyLua')
+-- hs.loadSpoon('EmmyLua')
 local VimMode = hs.loadSpoon('VimMode')
 local vim = VimMode:new()
 
-local k = hs.hotkey.modal.new('shift', 'space')
+local k = hs.hotkey.modal.new('ctrl', 's')
 local brightnessShift = 10
 function k:entered()
+  indicator:setLayer(layers.raise)
   print("brightness = " .. hs.brightness.get())
   hs.brightness.set(hs.brightness.get() - brightnessShift)
   print("brightness after = " .. hs.brightness.get())
@@ -49,6 +85,7 @@ function k:entered()
 end
 
 function k:exited()
+  indicator:setLayer(layers.default)
   hs.brightness.set(hs.brightness.get() + brightnessShift)
   hs.alert 'Exited mode'
 end
@@ -111,3 +148,57 @@ for _, shortcut in ipairs(hyperAppShortcuts) do
     focusWindow(shortcut[2])
   end)
 end
+
+------------------------------------
+
+-- Thanks to https://github.com/jasonrudolph/keyboard/blob/main/hammerspoon/control-escape.lua
+--- === ControlEscape ===
+---
+--- Make the `control` key more useful: If the `control` key is tapped, treat it
+--- as the `escape` key. If the `control` key is held down and used in
+--- combination with another key, then provide the normal `control` key
+--- behavior.
+
+-- Credit for this implementation goes to @arbelt and @jasoncodes 🙇⚡️😻
+--
+--   https://gist.github.com/arbelt/b91e1f38a0880afb316dd5b5732759f1
+--   https://github.com/jasoncodes/dotfiles/blob/ac9f3ac/hammerspoon/control_escape.lua
+
+local sendEscape = false
+local lastMods = {}
+
+local ctrlKeyHandler = function()
+  sendEscape = false
+end
+
+local ctrlKeyTimer = hs.timer.delayed.new(0.15, ctrlKeyHandler)
+
+local ctrlHandler = function(evt)
+  local newMods = evt:getFlags()
+  if lastMods["shift"] == newMods["shift"] then
+    return false
+  end
+  if not lastMods["shift"] then
+    lastMods = newMods
+    sendEscape = true
+    ctrlKeyTimer:start()
+  else
+    if sendEscape then
+      hs.eventtap.keyStroke("ctrl", "s", 0)
+    end
+    lastMods = newMods
+    ctrlKeyTimer:stop()
+  end
+  return false
+end
+
+ctrlTap = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, ctrlHandler)
+ctrlTap:start()
+
+otherHandler = function(evt)
+  sendEscape = false
+  return false
+end
+
+OtherTap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, otherHandler)
+OtherTap:start()
