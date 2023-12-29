@@ -48,6 +48,3 @@ vim.keymap.set("n", "<C-s>l", ":vertical resize +3<CR>")
 -- In termnal buffers, make it easier to enter normal mode
 vim.keymap.set('t', "n", "<C-\\><C-N>")
 
-vim.keymap.set("n", "q", ":w<CR>")
-vim.keymap.set("n", "Q", ":x<CR>")
-vim.keymap.set("n", "<C-q>", ":q<CR>")
