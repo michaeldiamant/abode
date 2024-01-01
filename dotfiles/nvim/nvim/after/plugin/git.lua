@@ -86,7 +86,7 @@ require('gitsigns').setup {
 }
 
 -- fugitve keymaps
-vim.keymap.set('n', "gs", ":Git<CR>")
+vim.keymap.set('n', "<leader>gs", ":Git<CR>")
 vim.keymap.set('n', "<leader>gm", ":GitMove <C-r>%")
 local md_fugitive = vim.api.nvim_create_augroup("md_fugitive", {})
 
