@@ -241,6 +241,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C487E730-87AE-4AEB-9124-97746EB75C44</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E9CA23F-2FF6-47EF-993D-6157788B9FD4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C670C61E-A7A8-4A02-9A61-453AAD409775</key>
 		<array>
 			<dict>
@@ -458,17 +471,19 @@
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>0</integer>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>gmail</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>11</integer>
+				<integer>18</integer>
 				<key>hotmod</key>
-				<integer>1048576</integer>
+				<integer>1966080</integer>
 				<key>hotstring</key>
-				<string>B</string>
+				<string>1</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -634,11 +649,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>5</integer>
+				<integer>20</integer>
 				<key>hotmod</key>
-				<integer>1048576</integer>
+				<integer>1966080</integer>
 				<key>hotstring</key>
-				<string>G</string>
+				<string>3</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -650,6 +665,39 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>3F6BB3A4-CB73-4A54-B353-9F05E4607FB6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>outlook</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>19</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>2</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C487E730-87AE-4AEB-9124-97746EB75C44</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1163,6 +1211,13 @@ Commands:
 			<real>1075</real>
 			<key>ypos</key>
 			<real>995</real>
+		</dict>
+		<key>C487E730-87AE-4AEB-9124-97746EB75C44</key>
+		<dict>
+			<key>xpos</key>
+			<real>205</real>
+			<key>ypos</key>
+			<real>410</real>
 		</dict>
 		<key>C670C61E-A7A8-4A02-9A61-453AAD409775</key>
 		<dict>

@@ -81,47 +81,58 @@ function k:entered()
   print("brightness = " .. hs.brightness.get())
   hs.brightness.set(hs.brightness.get() - brightnessShift)
   print("brightness after = " .. hs.brightness.get())
-  hs.alert 'Entered mode'
+  -- hs.alert 'Entered mode'
 end
 
 function k:exited()
   indicator:setLayer(layers.default)
   hs.brightness.set(hs.brightness.get() + brightnessShift)
-  hs.alert 'Exited mode'
+  -- hs.alert 'Exited mode'
 end
 
 k:bind('', 'escape', function() k:exit() end)
 k:bind('', 'w', function()
   hs.grid.show()
 end)
-k:bind('', 'C', nil, function()
-  for _, arr in ipairs(hyperAppShortcuts) do
-    if (arr[1] == 'C') then
-      focusWindow(arr[2])
+local registerWindowSwitch = function(key)
+  local switchWindow = function()
+    for _, arr in ipairs(hyperAppShortcuts) do
+      if (arr[1] == string.upper(key)) then
+        focusWindow(arr[2])
+      end
     end
   end
-end)
-k:bind('', 'J', nil, function()
-  for _, arr in ipairs(hyperAppShortcuts) do
-    if (arr[1] == 'J') then
-      focusWindow(arr[2])
-    end
+  k:bind('', key, nil, function()
+    switchWindow()
+    hs.eventtap.keyStroke({}, 'escape')
+  end)
+  k:bind('shift', key, nil, switchWindow)
+end
+registerWindowSwitch('c')
+registerWindowSwitch('j')
+registerWindowSwitch('k')
+registerWindowSwitch('l')
+
+local registerBrowserTabSwitch = function(bindKey, alfredKey)
+  local switchBrowserTab = function(sendEscape)
+    hs.eventtap.keyStroke(hyper, alfredKey, 0)
+    hs.timer.doAfter(0.25, function()
+      hs.eventtap.keyStroke({}, 'return')
+      if sendEscape then
+        hs.eventtap.keyStroke({}, 'escape')
+      end
+    end)
   end
-end)
-k:bind('', 'k', nil, function()
-  for _, arr in ipairs(hyperAppShortcuts) do
-    if (arr[1] == 'K') then
-      focusWindow(arr[2])
-    end
-  end
-end)
-k:bind('', 'l', nil, function()
-  for _, arr in ipairs(hyperAppShortcuts) do
-    if (arr[1] == 'L') then
-      focusWindow(arr[2])
-    end
-  end
-end)
+ k:bind('', bindKey, nil, function()
+    switchBrowserTab(true)
+  end)
+  k:bind('shift', bindKey, nil, function()
+    switchBrowserTab(false)
+  end)
+end
+registerBrowserTabSwitch('m', '1')
+registerBrowserTabSwitch('n', '2')
+registerBrowserTabSwitch('s', '3')
 
 -- Take app name from Activity Monitor.
 vim:disableForApp('iTerm')
@@ -171,7 +182,7 @@ local ctrlKeyHandler = function()
   sendEscape = false
 end
 
-local ctrlKeyTimer = hs.timer.delayed.new(0.15, ctrlKeyHandler)
+local ctrlKeyTimer = hs.timer.delayed.new(0.2, ctrlKeyHandler)
 
 local ctrlHandler = function(evt)
   local newMods = evt:getFlags()
