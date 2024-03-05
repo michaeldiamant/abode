@@ -40,3 +40,7 @@ second-macos:
 	defaults write -g InitialKeyRepeat -int 15
 	defaults write -g KeyRepeat -int 2
 
+spicerack:
+	mkdir -p ~/bin
+	ln -sf ~/.asdf/installs/python/$$(python --version | cut -d' ' -f2)/bin/start-local ~/bin/start-local
+ 
