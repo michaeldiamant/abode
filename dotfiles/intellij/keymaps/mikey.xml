@@ -1,5 +1,5 @@
 <keymap version="1" name="mikey" parent="Mac OS X 10.5+">
   <action id="Terminal.SwitchFocusToEditor">
-    <keyboard-shortcut first-keystroke="tab" />
+    <keyboard-shortcut first-keystroke="ctrl h" />
   </action>
 </keymap>

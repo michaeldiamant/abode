@@ -182,7 +182,7 @@ local ctrlKeyHandler = function()
   sendEscape = false
 end
 
-local ctrlKeyTimer = hs.timer.delayed.new(0.2, ctrlKeyHandler)
+local ctrlKeyTimer = hs.timer.delayed.new(0.1, ctrlKeyHandler)
 
 local ctrlHandler = function(evt)
   local newMods = evt:getFlags()
