@@ -1,6 +1,6 @@
 set number
 set relativenumber
-set scrolloff=10
+set scrolloff=2
 set visualbell
 set showmode
 set showcmd
@@ -117,3 +117,11 @@ nnoremap <leader>hr :action Vcs.RollbackChangedLines<cr>
 
 " Don't yank overridden text when pasting in visual mode
 vnoremap <leader>p "_dP
+
+nnoremap g; :action JumpToLastChange<Enter>
+nnoremap g, :action JumpToNextChange<Enter>
+
+" https://plugins.jetbrains.com/plugin/8183-gitlink
+nnoremap <leader>gx :action uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction<cr>
+" https://plugins.jetbrains.com/plugin/8262-find-pull-request
+nnoremap <leader>yp :action com.github.shiraji.findpullrequest.action.FindPullRequestCopyAction<cr>
