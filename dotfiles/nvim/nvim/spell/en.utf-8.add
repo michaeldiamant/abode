@@ -5,3 +5,6 @@ EKS
 AWS
 passthrough
 toolset
+outlier
+outliers
+degradations
