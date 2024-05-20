@@ -83,6 +83,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins+=(asdf)
 plugins+=(git)
 plugins+=(zsh-vi-mode)
+plugins+=(fzf-tab)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
