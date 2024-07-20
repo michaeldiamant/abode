@@ -1,4 +1,5 @@
 set number
+
 set relativenumber
 set scrolloff=2
 set visualbell
@@ -56,6 +57,11 @@ nnoremap <C-m> :action MaximizeEditorInSplit<CR>
 
 " Switch between projects
 nnoremap <leader>w :action WindowMenu<cr>
+nnoremap <leader>W :action ManageRecentProjects<cr>
+nnoremap <leader>x :action CloseProject<cr>
+nnoremap <leader>L :action PreviousProjectWindow<cr>
+nnoremap <leader>l :action NextProjectWindow<cr>
+
 
 " Code navigation
 nnoremap \f :action ActivateFindToolWindow<cr>
@@ -66,7 +72,7 @@ nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \b :action ActivateBuildToolWindow<cr>
 nnoremap <leader>b :action CompileDirty<cr>
 nnoremap <leader>S :action SelectInProjectView<cr>
-nnoremap <leader>o :action ActivateStructureToolWindow<cr>
+nnoremap <leader>os :action ActivateStructureToolWindow<cr>
 
 nnoremap <leader>j :action MethodDown<cr>
 nnoremap <leader>k :action MethodUp<cr>
@@ -110,6 +116,8 @@ nmap <c-i> <Action>(Forward)
 " Diff
 nnoremap ]c :action VcsShowNextChangeMarker<cr>
 nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]d :action NextDiff<cr>
+nnoremap [d :action PreviousDiff<cr>
 nnoremap <leader>hd :action Vcs.ShowDiffChangedLines<cr>
 nnoremap <leader>hD :action Compare.SameVersion<cr>
 nnoremap <leader>gb :action Git.CompareWithBranch<cr>
@@ -127,3 +135,5 @@ vnoremap <leader>gc :action Github.Open.In.Browser<cr>
 " https://plugins.jetbrains.com/plugin/8262-find-pull-request
 nnoremap <leader>gp :action com.github.shiraji.findpullrequest.action.FindPullRequestAction<cr>
 nnoremap <leader>yp :action com.github.shiraji.findpullrequest.action.FindPullRequestCopyAction<cr>
+
+nnoremap <leader>og :action Generate<cr>
