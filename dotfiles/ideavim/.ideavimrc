@@ -137,3 +137,8 @@ nnoremap <leader>gp :action com.github.shiraji.findpullrequest.action.FindPullRe
 nnoremap <leader>yp :action com.github.shiraji.findpullrequest.action.FindPullRequestCopyAction<cr>
 
 nnoremap <leader>og :action Generate<cr>
+
+" Font sizes
+nnoremap <leader>yz :action EditorIncreaseFontSizeGlobal<cr>
+nnoremap <leader>yZ :action EditorDecreaseFontSizeGlobal<cr>
+nnoremap <leader>yr :action EditorResetFontSizeGlobal<cr>
