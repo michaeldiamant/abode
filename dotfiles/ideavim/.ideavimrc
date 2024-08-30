@@ -143,6 +143,8 @@ nnoremap <leader>yz :action EditorIncreaseFontSizeGlobal<cr>
 nnoremap <leader>yZ :action EditorDecreaseFontSizeGlobal<cr>
 nnoremap <leader>yr :action EditorResetFontSizeGlobal<cr>
 
+nnoremap <leader>ym :action MergeAllWindowsAction<cr>
+
 nnoremap <leader>or :action Github.Pull.Request.Review.In.Editor.Toggle<cr>
 
 " NERDTree
