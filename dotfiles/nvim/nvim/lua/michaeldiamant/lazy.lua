@@ -16,11 +16,13 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "windwp/nvim-autopairs", -- add parentheses on autocomplete
   "nvim-tree/nvim-web-devicons",
+  "preservim/nerdtree",
 
   -- Color schemes
   { "rose-pine/neovim", name = "rose-pine" },
   "sainnhe/everforest",
   "folke/tokyonight.nvim",
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   -- cmp
   "hrsh7th/nvim-cmp", -- The completion plugin

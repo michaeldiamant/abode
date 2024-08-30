@@ -31,7 +31,8 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- Disabling character column highlight
+--vim.opt.colorcolumn = "80"
 
 -- split windows
 vim.opt.splitright = true -- split vertical window to the right

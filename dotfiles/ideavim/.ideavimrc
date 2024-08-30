@@ -29,7 +29,7 @@ let mapleader=" "
 set commentary " https://github.com/tpope/vim-commentary
 set surround " https://github.com/tpope/vim-surround
 set highlightedyank
-set quickscope
+set NERDTree
 
 " Copy into system clipboard
 nnoremap <C-y> "+y
@@ -142,3 +142,9 @@ nnoremap <leader>og :action Generate<cr>
 nnoremap <leader>yz :action EditorIncreaseFontSizeGlobal<cr>
 nnoremap <leader>yZ :action EditorDecreaseFontSizeGlobal<cr>
 nnoremap <leader>yr :action EditorResetFontSizeGlobal<cr>
+
+nnoremap <leader>or :action Github.Pull.Request.Review.In.Editor.Toggle<cr>
+
+" NERDTree
+nnoremap gt :NERDTreeFind<cr>
+nnoremap gT :NERDTree<cr>
