@@ -55,17 +55,18 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 nnoremap <C-m> :action MaximizeEditorInSplit<CR>
 
-" Switch between projects
+" Project
+nnoremap \pr :action Maven.Reimport<cr>
+nnoremap \pi :action ImportProject<cr>
+nnoremap \pq :action CloseProject<cr>
 nnoremap <leader>w :action WindowMenu<cr>
 nnoremap <leader>W :action ManageRecentProjects<cr>
-nnoremap <leader>x :action CloseProject<cr>
-nnoremap <leader>L :action PreviousProjectWindow<cr>
-nnoremap <leader>l :action NextProjectWindow<cr>
-
+" nnoremap <leader>L :action PreviousProjectWindow<cr>
+" nnoremap <leader>l :action NextProjectWindow<cr>
 
 " Code navigation
 nnoremap \f :action ActivateFindToolWindow<cr>
-nnoremap \p :action ActivateProblemsViewToolWindow<cr>
+nnoremap \t :action ActivateProblemsViewToolWindow<cr>
 nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \r :action ActivateRunToolWindow<cr>
 nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
