@@ -127,6 +127,7 @@ nnoremap <leader>hr :action Vcs.RollbackChangedLines<cr>
 vnoremap <leader>p "_dP
 
 nnoremap g; :action JumpToLastChange<Enter>
+
 nnoremap g, :action JumpToNextChange<Enter>
 
 nnoremap <leader>gc :action Github.Open.In.Browser<cr>
