@@ -147,7 +147,7 @@ nnoremap <leader>yZ :action EditorDecreaseFontSizeGlobal<cr>
 nnoremap <leader>yr :action EditorResetFontSizeGlobal<cr>
 
 nnoremap <leader>ym :action MergeAllWindowsAction<cr>
-nnoremap <leader>yt :action ViewToolBar<cr>
+nnoremap <leader>yt :action ViewToolBar<cr>:action ViewToolButtons<cr>
 
 nnoremap <leader>or :action Github.Pull.Request.Review.In.Editor.Toggle<cr>
 

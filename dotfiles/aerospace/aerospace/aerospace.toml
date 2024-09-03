@@ -129,6 +129,8 @@ alt-shift-p = 'move-node-to-workspace 10'
 ctrl-enter = 'focus-back-and-forth'
 ctrl-backspace = 'workspace-back-and-forth'
 
+alt-shift-f = 'macos-native-fullscreen'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 # alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
