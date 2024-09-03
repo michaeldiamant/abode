@@ -151,6 +151,11 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# https://github.com/nikitabobko/AeroSpace/issues/340
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'layout tiling'
+
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij'
 run = "move-node-to-workspace 2"
