@@ -113,4 +113,4 @@ do
   source "$f"
 done
 
-eval "$(starship init zsh)
+eval "$(starship init zsh)"
