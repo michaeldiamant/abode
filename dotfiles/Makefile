@@ -8,7 +8,7 @@ stow:
 	stow --target=$$HOME zsh
 	stow --target=$$HOME/.config/ nvim
 	stow --target=$$HOME/Library/Application\ Support\/Alfred/ alfred
-	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IdeaIC2023.1/ intellij
+	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2024.1/ intellij
 	stow --target=$$HOME/.config/ yabai
 	stow --target=$$HOME/.config/ skhd
 	stow --target=$$HOME/.config/ aerospace
