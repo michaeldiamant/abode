@@ -90,6 +90,7 @@ nnoremap <leader>fS :action FileStructurePopup<cr>
 nnoremap gd :action GotoDeclaration<cr>
 nnoremap gD :action GotoTypeDeclaration<cr>
 nnoremap <leader>i :action GotoImplementation<cr>
+nnoremap <leader><S-i> :action GotoSuperMethod<cr>
 nnoremap <leader>a :action ShowIntentionActions<cr>
 nnoremap <leader><S-e> :action GotoPreviousError<cr>
 nnoremap <leader>e :action GotoNextError<cr>
@@ -146,6 +147,7 @@ nnoremap <leader>yZ :action EditorDecreaseFontSizeGlobal<cr>
 nnoremap <leader>yr :action EditorResetFontSizeGlobal<cr>
 
 nnoremap <leader>ym :action MergeAllWindowsAction<cr>
+nnoremap <leader>yt :action ViewToolBar<cr>
 
 nnoremap <leader>or :action Github.Pull.Request.Review.In.Editor.Toggle<cr>
 
