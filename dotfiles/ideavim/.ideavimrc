@@ -69,7 +69,6 @@ nnoremap \f :action ActivateFindToolWindow<cr>
 nnoremap \t :action ActivateProblemsViewToolWindow<cr>
 nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \r :action ActivateRunToolWindow<cr>
-nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \b :action ActivateBuildToolWindow<cr>
 nnoremap <leader>b :action CompileDirty<cr>
 nnoremap <leader>S :action SelectInProjectView<cr>
