@@ -77,6 +77,7 @@ plugins+=(asdf)
 plugins+=(git)
 plugins+=(zsh-vi-mode)
 plugins+=(fzf-tab)
+plugins+=(direnv)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
