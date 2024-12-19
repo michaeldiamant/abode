@@ -95,7 +95,13 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [kubernetes]
+disabled = false
 format = '\[[$symbol$context( \($namespace\))]($style)\]'
+
+[[kubernetes.contexts]]
+context_pattern = "*[^non]prod*"
+context_alias = "production"
+style = "bold red"
 
 [lua]
 format = '\[[$symbol($version)]($style)\]'
