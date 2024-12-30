@@ -3,6 +3,8 @@ api.map('gt', 'T');
 // Navigate tabs like vim windows
 api.map('<Ctrl-l>', 'E');
 api.map('<Ctrl-h>', 'R');
+api.map('<Ctrl-j>', 'E');
+api.map('<Ctrl-k>', 'R');
 
 settings.focusFirstCandidate = false;
 settings.tabsThreshold = 0;
