@@ -51,3 +51,4 @@ vim.keymap.set('t', "n", "<C-\\><C-N>")
 vim.keymap.set("n", "gt", ":NERDTreeFind<CR>")
 vim.keymap.set("n", "gT", ":NERDTree<CR>")
 
+vim.keymap.set("n", "\\j", ":%! python -m json.tool<CR>")

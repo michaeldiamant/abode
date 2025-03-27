@@ -20,6 +20,7 @@ sethandler <C-h> n-v-i:vim
 sethandler <C-j> n-v-i:vim
 sethandler <C-k> n-v-i:vim
 sethandler <C-l> n-v-i:vim
+sethandler <C-6> n-v-i:vim
 
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \s :action IdeaVim.ReloadVimRc.reload<CR>
