@@ -11,7 +11,7 @@
     <option name="widgets">
       <map>
         <entry key="CodeStyleStatusBarWidget" value="false" />
-        <entry key="LineSeparator" value="false" />
+        <entry key="SumnekoBar" value="false" />
       </map>
     </option>
   </component>
