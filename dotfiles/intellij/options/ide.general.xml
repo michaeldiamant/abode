@@ -11,6 +11,10 @@
     <option name="widgets">
       <map>
         <entry key="CodeStyleStatusBarWidget" value="false" />
+        <entry key="Encoding" value="false" />
+        <entry key="IdeaVim-Icon" value="false" />
+        <entry key="LineSeparator" value="false" />
+        <entry key="ReadOnlyAttribute" value="false" />
         <entry key="SumnekoBar" value="false" />
       </map>
     </option>

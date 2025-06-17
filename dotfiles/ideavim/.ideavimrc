@@ -132,12 +132,14 @@ nnoremap g; :action JumpToLastChange<Enter>
 
 nnoremap g, :action JumpToNextChange<Enter>
 
-nnoremap <leader>gc :action Github.Open.In.Browser<cr>
-vnoremap <leader>gc :action Github.Open.In.Browser<cr>
+nnoremap <leader>gb :action Github.Open.In.Browser<cr>
+vnoremap <leader>gb :action Github.Open.In.Browser<cr>
 
 " https://plugins.jetbrains.com/plugin/8262-find-pull-request
 nnoremap <leader>gp :action com.github.shiraji.findpullrequest.action.FindPullRequestAction<cr>
 nnoremap <leader>yp :action com.github.shiraji.findpullrequest.action.FindPullRequestCopyAction<cr>
+
+nnoremap <leader>gc :action ActivateGitHubCopilotChatToolWindow<cr>
 
 nnoremap <leader>og :action Generate<cr>
 
