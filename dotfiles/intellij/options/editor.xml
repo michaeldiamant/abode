@@ -87,6 +87,7 @@
     <option name="SHOW_INTENTION_BULB" value="false" />
     <option name="IS_CARET_BLINKING" value="false" />
     <option name="SHOW_BREADCRUMBS_ABOVE" value="true" />
+    <option name="SHOW_BREADCRUMBS" value="false" />
   </component>
   <component name="InlayHintsSettings">
     <option name="lastViewedProviderKeyId" value="" />
