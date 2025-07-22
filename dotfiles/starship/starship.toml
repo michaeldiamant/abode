@@ -95,7 +95,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [kubernetes]
-disabled = false
+disabled = true
 format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
 [[kubernetes.contexts]]
