@@ -23,6 +23,7 @@ require("lazy").setup({
   "sainnhe/everforest",
   "folke/tokyonight.nvim",
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  "sainnhe/gruvbox-material",
 
   -- cmp
   "hrsh7th/nvim-cmp", -- The completion plugin
@@ -78,7 +79,9 @@ require("lazy").setup({
   "szw/vim-maximizer",
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
   "folke/neodev.nvim", -- Fix undefined global vim errors
-  "christoomey/vim-tmux-navigator",
+  { "christoomey/vim-tmux-navigator",
+  lazy = false,
+  },
   "nvim-lualine/lualine.nvim",
   "folke/trouble.nvim",
   "folke/zen-mode.nvim",
