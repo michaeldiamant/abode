@@ -126,7 +126,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 0'
 alt-shift-p = 'move-node-to-workspace 10'
 
-ctrl-enter = 'focus-back-and-forth'
+ctrl-quote = 'focus-back-and-forth'
 ctrl-backspace = 'workspace-back-and-forth'
 
 alt-shift-f = 'macos-native-fullscreen'
