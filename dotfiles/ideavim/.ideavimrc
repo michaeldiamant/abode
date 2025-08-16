@@ -1,6 +1,5 @@
 set number
 
-set relativenumber
 set scrolloff=2
 set visualbell
 set showmode
