@@ -1,5 +1,5 @@
 java corretto-21.0.7.6.1
-neovim 0.9.2
+neovim 0.11.3
 maven 3.9.9
 helm 3.17.3
 nodejs 23.11.0

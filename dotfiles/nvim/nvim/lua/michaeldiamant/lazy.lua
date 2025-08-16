@@ -46,8 +46,9 @@ require("lazy").setup({
   "RRethy/vim-illuminate", -- Highlight LSP symbol references under cursor
 
   -- -- Treesitter
-  -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  -- "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  "nvim-treesitter/nvim-treesitter-textobjects",
+  "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
