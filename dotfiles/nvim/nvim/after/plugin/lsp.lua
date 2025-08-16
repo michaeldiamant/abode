@@ -131,7 +131,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gsd', ":sp | lua vim.lsp.buf.definition()<CR>", desc_opts("Jump to symbol definition in sp"))
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, desc_opts("Show symbol hover info"))
-    vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, desc_opts("Show symbol signature info"))
+    -- vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, desc_opts("Show symbol signature info"))
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, desc_opts("Add LSP workspace folder"))
     vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, desc_opts("Remove LSP workspace folder"))
     vim.keymap.set('n', '<leader>wl', function()
