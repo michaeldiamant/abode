@@ -15,6 +15,22 @@ require'nvim-treesitter.configs'.setup {
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
+  textobjects = {
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        ["<leader>j"] = "@function.outer", -- Move to start of next function
+      },
+      goto_previous_start = {
+        ["<leader>k"] = "@function.outer", -- Move to start of previous function
+      },
+      -- Optional: also map ends or classes as needed
+      -- goto_next_end = { ["]M"] = "@function.outer", },
+      -- goto_previous_end = { ["[M"] = "@function.outer", },
+    },
+  },
+
   highlight = {
     enable = true,
 
@@ -40,7 +56,7 @@ require'nvim-treesitter.configs'.setup {
   },
 
   rainbow = {
-    enable = true,
+    enable = false,
     -- list of languages you want to disable the plugin for
     disable = { "" },
     -- Which query to use for finding delimiters
