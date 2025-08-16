@@ -42,7 +42,6 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "mfussenegger/nvim-jdtls",
   "weilbith/nvim-code-action-menu",
-  "simrat39/symbols-outline.nvim",
   "RRethy/vim-illuminate", -- Highlight LSP symbol references under cursor
 
   -- -- Treesitter
@@ -83,7 +82,6 @@ require("lazy").setup({
   "stevearc/dressing.nvim",
 
   -- git
-  "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
   "lewis6991/gitsigns.nvim",
 
