@@ -19,11 +19,7 @@ require("lazy").setup({
   "preservim/nerdtree",
 
   -- Color schemes
-  { "rose-pine/neovim", name = "rose-pine" },
-  "sainnhe/everforest",
-  "folke/tokyonight.nvim",
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  "sainnhe/gruvbox-material",
 
   -- cmp
   "hrsh7th/nvim-cmp", -- The completion plugin
@@ -49,10 +45,9 @@ require("lazy").setup({
   "simrat39/symbols-outline.nvim",
   "RRethy/vim-illuminate", -- Highlight LSP symbol references under cursor
 
-  -- Treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  "HiPhish/nvim-ts-rainbow2", -- Color corresponding parentheses
-  "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
+  -- -- Treesitter
+  -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  -- "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
@@ -84,18 +79,13 @@ require("lazy").setup({
   },
   "nvim-lualine/lualine.nvim",
   "folke/trouble.nvim",
-  "folke/zen-mode.nvim",
-  "theprimeagen/harpoon",
   "stevearc/dressing.nvim",
 
   -- git
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
   "lewis6991/gitsigns.nvim",
-  "pwntester/octo.nvim",
 
 --  "github/copilot.vim",
---  "mbbill/undotree",
---  "theprimeagen/refactoring.nvim",
 })
 
