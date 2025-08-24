@@ -25,7 +25,7 @@ vim.keymap.set('n', '\\t', builtin.diagnostics, { desc = "List document diagnost
 
 require('telescope').setup {
   defaults = {
-    -- Truncate path when too long for picker.
+    sorting_strategy = "ascending",
     path_display = { "filename_first" },
     layout_config = {
       width = 0.99,
