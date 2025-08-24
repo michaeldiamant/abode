@@ -47,3 +47,6 @@ vim.g["test#runner_commands"] = { "GradleTest", "MavenTest"}
 
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevelstart = 99 -- Prevent folding when opening new file
+
+vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeQuitOnOpen = 3
