@@ -41,7 +41,6 @@ require("lazy").setup({
   { "williamboman/mason.nvim", build = ":MasonUpdate" }, -- :MasonUpdate updates registry contents
   "williamboman/mason-lspconfig.nvim",
   "mfussenegger/nvim-jdtls",
-  "weilbith/nvim-code-action-menu",
   "RRethy/vim-illuminate", -- Highlight LSP symbol references under cursor
 
   -- -- Treesitter

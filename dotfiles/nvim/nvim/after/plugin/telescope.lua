@@ -30,7 +30,6 @@ require('telescope').setup {
     layout_config = {
       width = 0.99,
       height = 0.95,
-      preview_width = 0.2,
     }
   },
   pickers = {
