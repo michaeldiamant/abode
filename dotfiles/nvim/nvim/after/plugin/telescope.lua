@@ -18,7 +18,7 @@ vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols, { desc 
 vim.keymap.set('n', '<leader>fS', builtin.lsp_document_symbols, { desc = "List document symbols" })
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = "Jump to symbol implementation" })
 
-vim.keymap.set('n', '\\t', function() builtin.diagnostics({bufnr=0}) end, { desc = "List document diagnostics" })
+-- vim.keymap.set('n', '\\t', function() builtin.diagnostics({bufnr=0}) end, { desc = "List document diagnostics" })
 
 -- vim.keymap.set('n', 'cu', builtin.lsp_incoming_calls, { desc = "List symbol incoming calls in Telescope" })
 -- vim.keymap.set('n', 'co', builtin.lsp_outgoing_calls, { desc = "List symbol outgoing calls in Telescope" })

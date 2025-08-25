@@ -54,3 +54,16 @@ vim.keymap.set('n', '<leader>vl', function()
   vim.diagnostic.config({ virtual_lines = not current })
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
+vim.keymap.set('n', '\\t', function()
+  -- vim.diagnostic.setqflist({bufnr = 0, open = true})
+  local diagnostics = vim.diagnostic.get(0)  -- get diagnostics in current buffer
+  if #diagnostics == 0 then
+    -- Clear quickfix list if no diagnostics
+    vim.fn.setqflist({})
+    vim.cmd('cclose')  -- optional: close quickfix window if empty
+  else
+    -- Otherwise set quickfix list with current diagnostics and open quickfix window
+    vim.diagnostic.setqflist({ bufnr = 0, open = true })
+  end
+end)
+
