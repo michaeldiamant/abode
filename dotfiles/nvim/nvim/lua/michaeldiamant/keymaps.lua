@@ -77,6 +77,11 @@ vim.keymap.set('n', 'qc', function()
   vim.cmd('cclose')
 end, { noremap = true, silent = true, desc = "Clear quickfix list" })
 
+vim.keymap.set('n', 'yF', function()
+  vim.fn.setreg('+', vim.fn.expand('%:p'))
+end, { noremap = true, silent = true })
+
+
 vim.keymap.set('n', '\\t', function()
   -- vim.diagnostic.setqflist({bufnr = 0, open = true})
   local diagnostics = vim.diagnostic.get(0)  -- get diagnostics in current buffer

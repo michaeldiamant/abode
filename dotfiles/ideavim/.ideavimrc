@@ -155,3 +155,5 @@ nnoremap <leader>or :action Github.Pull.Request.Review.In.Editor.Toggle<cr>
 " NERDTree
 nnoremap gt :NERDTreeFind<cr>
 nnoremap gT :NERDTree<cr>
+
+nnoremap yF :action CopyAbsolutePath<cr>
