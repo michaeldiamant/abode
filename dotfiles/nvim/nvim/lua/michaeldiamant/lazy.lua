@@ -48,11 +48,12 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter-textobjects",
   "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
 
+  "ibhagwan/fzf-lua",
   -- Telescope
-  "nvim-telescope/telescope.nvim",
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  "smartpde/telescope-recent-files",
-  "nvim-telescope/telescope-ui-select.nvim",
+  -- "nvim-telescope/telescope.nvim",
+  -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  -- "smartpde/telescope-recent-files",
+  -- "nvim-telescope/telescope-ui-select.nvim",
 
   -- Sessions
   "tpope/vim-obsession",
