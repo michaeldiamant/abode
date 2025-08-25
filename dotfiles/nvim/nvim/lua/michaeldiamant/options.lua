@@ -50,3 +50,18 @@ vim.opt.foldlevelstart = 99 -- Prevent folding when opening new file
 
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeQuitOnOpen = 3
+
+vim.diagnostic.config {
+  virtual_lines = true
+}
+
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" } -- Acquiesces undefined global vim warning.
+            }
+        }
+    }
+})
+

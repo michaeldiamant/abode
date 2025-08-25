@@ -71,12 +71,10 @@ require("lazy").setup({
 
   -- Misc
   "tpope/vim-sleuth", -- Dynamically adjust shiftwidth
-  "folke/neodev.nvim", -- Fix undefined global vim errors
   { "christoomey/vim-tmux-navigator",
   lazy = false,
   },
   "nvim-lualine/lualine.nvim",
-  "folke/trouble.nvim",
   "stevearc/dressing.nvim",
 
   -- git
