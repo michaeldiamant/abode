@@ -54,6 +54,29 @@ vim.keymap.set('n', '<leader>vl', function()
   vim.diagnostic.config({ virtual_lines = not current })
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
+vim.keymap.set('n', 'qn', ':cnext<CR>', { noremap = true, silent = true, desc = "Next quickfix item" })
+vim.keymap.set('n', 'qp', ':cprev<CR>', { noremap = true, silent = true, desc = "Previous quickfix item" })
+vim.keymap.set('n', '\\q', function()
+
+  local qf_exists = false
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      qf_exists = true
+      break
+    end
+  end
+  if qf_exists then
+    vim.cmd('cclose')
+  else
+    vim.cmd('copen')
+  end
+end, { noremap = true, silent = true, desc = "Toggle quickfix list" })
+
+vim.keymap.set('n', 'qc', function()
+  vim.fn.setqflist({})
+  vim.cmd('cclose')
+end, { noremap = true, silent = true, desc = "Clear quickfix list" })
+
 vim.keymap.set('n', '\\t', function()
   -- vim.diagnostic.setqflist({bufnr = 0, open = true})
   local diagnostics = vim.diagnostic.get(0)  -- get diagnostics in current buffer
@@ -104,7 +127,7 @@ vim.api.nvim_create_user_command('RunScriptSplit', function(opts)
       end
     end
 
-    print ("is it curl???? " .. tostring(is_curl))
+    print ("is it curl? " .. tostring(is_curl))
     if is_curl then
       -- Split output into headers and body by two newlines (\r\n\r\n or \n\n)
       -- curl headers are typically at the start if you use -i or --include
