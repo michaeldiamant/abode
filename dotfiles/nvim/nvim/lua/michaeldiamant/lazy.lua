@@ -75,7 +75,6 @@ require("lazy").setup({
   lazy = false,
   },
   "nvim-lualine/lualine.nvim",
-  "stevearc/dressing.nvim",
 
   -- git
   "tpope/vim-rhubarb",
