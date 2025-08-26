@@ -94,6 +94,25 @@ vim.keymap.set('n', '\\t', function()
     vim.diagnostic.setqflist({ bufnr = 0, open = true })
   end
 end)
+
+local function open_files_in_splits(filenames)
+  local first = true
+
+  for _, file in ipairs(filenames) do
+    if file ~= "" then
+      local stat = vim.loop.fs_stat(file)
+      if stat and stat.size > 0 then
+        if first then
+          vim.cmd("vsplit " .. vim.fn.fnameescape(file))
+          first = false
+        else
+          vim.cmd("split " .. vim.fn.fnameescape(file))
+        end
+      end
+    end
+  end
+end
+
 vim.api.nvim_create_user_command('RunScriptSplit', function(opts)
   local count = opts.count > 0 and opts.count or 1
   local use_popup = true  -- default show popup
@@ -119,70 +138,71 @@ vim.api.nvim_create_user_command('RunScriptSplit', function(opts)
   local runtimes = {}
   for _ = 1, count do
     local start = vim.loop.hrtime()
-    local output = vim.fn.system("bash", text)
+    local output = vim.fn.systemlist("bash", text)
     local endt = vim.loop.hrtime()
     table.insert(runtimes, (endt - start) / 1e6) -- ms
 
-    -- Check if buffer contains a curl command line (basic heuristic)
-    local is_curl = false
-    for _, line in ipairs(lines) do
-      if string.find(line, 'curl -i', 1, true) then
-        is_curl = true
-        break
-      end
-    end
+    open_files_in_splits(output);
+    -- -- Check if buffer contains a curl command line (basic heuristic)
+    -- local is_curl = false
+    -- for _, line in ipairs(lines) do
+    --   if string.find(line, 'curl -i', 1, true) then
+    --     is_curl = true
+    --     break
+    --   end
+    -- end
 
-    print ("is it curl? " .. tostring(is_curl))
-    if is_curl then
-      -- Split output into headers and body by two newlines (\r\n\r\n or \n\n)
-      -- curl headers are typically at the start if you use -i or --include
-      local header_body_split = output:find("\r\n\r\n")
-      if not header_body_split then
-        header_body_split = output:find("\n\n")
-      end
+    -- print ("is it curl? " .. tostring(is_curl))
+    -- if is_curl then
+    --   -- Split output into headers and body by two newlines (\r\n\r\n or \n\n)
+    --   -- curl headers are typically at the start if you use -i or --include
+    --   local header_body_split = output:find("\r\n\r\n")
+    --   if not header_body_split then
+    --     header_body_split = output:find("\n\n")
+    --   end
 
-      local headers = ""
-      local body = output
-      if header_body_split then
-        headers = output:sub(1, header_body_split)
-        body = output:sub(header_body_split + 2)
-      end
+    --   local headers = ""
+    --   local body = output
+    --   if header_body_split then
+    --     headers = output:sub(1, header_body_split)
+    --     body = output:sub(header_body_split + 2)
+    --   end
 
-      -- Open vertical split with headers
-      vim.cmd('vnew')
-      local header_buf = vim.api.nvim_get_current_buf()
-      vim.api.nvim_buf_set_lines(header_buf, 0, -1, false, vim.split(headers, "\n", {trimempty=true}))
-      vim.bo.modified = false
-      vim.bo.buftype = 'nofile'
-      vim.bo.bufhidden = 'hide'
-      vim.bo.swapfile = false
+    --   -- Open vertical split with headers
+    --   vim.cmd('vnew')
+    --   local header_buf = vim.api.nvim_get_current_buf()
+    --   vim.api.nvim_buf_set_lines(header_buf, 0, -1, false, vim.split(headers, "\n", {trimempty=true}))
+    --   vim.bo.modified = false
+    --   vim.bo.buftype = 'nofile'
+    --   vim.bo.bufhidden = 'hide'
+    --   vim.bo.swapfile = false
 
-      -- Open horizontal split with body below original window
-      vim.cmd('split')
-      -- local body_buf = vim.api.nvim_get_current_buf()
-      -- local body_buf = vim.api.nvim_create_buf(false, true) -- create new empty scratch buffer
-      local horizontal_win = vim.api.nvim_get_current_win()
-      -- Create new empty scratch buffer for response body
-      local body_buf = vim.api.nvim_create_buf(false, true)
-      -- Set the new scratch buffer to the horizontal split window
-      vim.api.nvim_win_set_buf(horizontal_win, body_buf)
-      vim.api.nvim_buf_set_lines(body_buf, 0, -1, false, vim.split(body, "\n", {trimempty=true}))
-      vim.bo.modified = false
-      vim.bo.buftype = 'nofile'
-      vim.bo.bufhidden = 'hide'
-      vim.bo.swapfile = false
+    --   -- Open horizontal split with body below original window
+    --   vim.cmd('split')
+    --   -- local body_buf = vim.api.nvim_get_current_buf()
+    --   -- local body_buf = vim.api.nvim_create_buf(false, true) -- create new empty scratch buffer
+    --   local horizontal_win = vim.api.nvim_get_current_win()
+    --   -- Create new empty scratch buffer for response body
+    --   local body_buf = vim.api.nvim_create_buf(false, true)
+    --   -- Set the new scratch buffer to the horizontal split window
+    --   vim.api.nvim_win_set_buf(horizontal_win, body_buf)
+    --   vim.api.nvim_buf_set_lines(body_buf, 0, -1, false, vim.split(body, "\n", {trimempty=true}))
+    --   vim.bo.modified = false
+    --   vim.bo.buftype = 'nofile'
+    --   vim.bo.bufhidden = 'hide'
+    --   vim.bo.swapfile = false
 
-      vim.api.nvim_set_current_win(original_win)  -- ensure focus is original window for horizontal split
-    else
-      -- Default: all output in vertical split
-      vim.cmd('vnew')
-      local output_buf = vim.api.nvim_get_current_buf()
-      vim.api.nvim_buf_set_lines(output_buf, 0, -1, false, vim.split(output, "\n", {trimempty=true}))
-      vim.bo.modified = false
-      vim.bo.buftype = 'nofile'
-      vim.bo.bufhidden = 'hide'
-      vim.bo.swapfile = false
-    end
+    --   vim.api.nvim_set_current_win(original_win)  -- ensure focus is original window for horizontal split
+    -- else
+    --   -- Default: all output in vertical split
+    --   vim.cmd('vnew')
+    --   local output_buf = vim.api.nvim_get_current_buf()
+    --   vim.api.nvim_buf_set_lines(output_buf, 0, -1, false, vim.split(output, "\n", {trimempty=true}))
+    --   vim.bo.modified = false
+    --   vim.bo.buftype = 'nofile'
+    --   vim.bo.bufhidden = 'hide'
+    --   vim.bo.swapfile = false
+    -- end
   end
 
   local total_end = vim.loop.hrtime()
@@ -247,4 +267,25 @@ vim.keymap.set('n', '<Leader>s', function()
   if count == 0 then count = 1 end
   vim.cmd(count .. 'RunScriptSplit')
 end, { noremap = true, silent = true })
+
+vim.keymap.set('n', '\\J', function()
+  local file = vim.api.nvim_buf_get_name(0)
+  if file == "" then
+    print("No file in current buffer")
+    return
+  end
+
+  local escaped_file = vim.fn.shellescape(file)
+  -- Check if a tmux window named "jless" exists
+  local check_cmd = "tmux list-windows -F '#W' | grep jless"
+  local exists = os.execute(check_cmd)
+
+  if exists == 0 then
+    -- Kill existing window named 'jless'
+    os.execute("tmux kill-window -t :jless")
+  end
+  -- Window does not exist, create new window named jless running jless with the file
+  local new_win_cmd = string.format("tmux new-window -n jless 'jless %s'", escaped_file)
+  os.execute(new_win_cmd)
+end, { desc = 'Open current file in jless, reusing or creating tmux window named jless' })
 
