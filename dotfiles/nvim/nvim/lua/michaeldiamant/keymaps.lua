@@ -43,7 +43,7 @@ vim.keymap.set("n", "<C-s>h", ":vertical resize -3<CR>")
 vim.keymap.set("n", "<C-s>l", ":vertical resize +3<CR>")
 
 -- In termnal buffers, make it easier to enter normal mode
-vim.keymap.set('t', "n", "<C-\\><C-N>")
+-- vim.keymap.set('t', "n", "<C-\\><C-N>")
 
 vim.keymap.set("n", "gt", ":NERDTreeFind<CR><C-w>|")
 vim.keymap.set("n", "gT", ":NERDTree<CR><C-w>|")
