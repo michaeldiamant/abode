@@ -86,6 +86,8 @@
     <option name="SOFT_WRAP_FILE_MASKS" value="*.ts; *.md; *.txt; *.rst; *.adoc; *.java;*.xml;*.py;*.yaml;*.yml;*.sh" />
     <option name="SHOW_INTENTION_BULB" value="false" />
     <option name="IS_CARET_BLINKING" value="false" />
+    <option name="IS_RIGHT_MARGIN_SHOWN" value="false" />
+    <option name="IS_INDENT_GUIDES_SHOWN" value="false" />
   </component>
   <component name="InlayHintsSettings">
     <option name="lastViewedProviderKeyId" value="" />
