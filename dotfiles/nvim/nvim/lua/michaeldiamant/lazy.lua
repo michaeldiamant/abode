@@ -75,6 +75,7 @@ require("lazy").setup({
   -- git
   "lewis6991/gitsigns.nvim",
 
+  "akinsho/toggleterm.nvim",
 --  "github/copilot.vim",
 })
 
