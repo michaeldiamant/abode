@@ -34,6 +34,8 @@ vim.opt.updatetime = 50
 -- Disabling character column highlight
 --vim.opt.colorcolumn = "80"
 
+vim.o.cursorline = true
+
 -- split windows
 vim.opt.splitright = true -- split vertical window to the right
 vim.opt.splitbelow = true -- split horizontal window to the bottom

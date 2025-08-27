@@ -20,6 +20,7 @@ require("lazy").setup({
 
   -- Color schemes
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "ellisonleao/gruvbox.nvim", priority = 1000 },
 
   -- cmp
   "hrsh7th/nvim-cmp", -- The completion plugin
