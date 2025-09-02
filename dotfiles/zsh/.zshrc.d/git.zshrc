@@ -1,7 +1,7 @@
 function push_all() {
   git add .
   gc -m "let's go"
-  gps
+  git push origin
 }
 
 alias jj="push_all"
