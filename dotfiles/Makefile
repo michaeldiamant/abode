@@ -13,4 +13,5 @@ stow:
 	stow --target=$$HOME/.config/ skhd
 	stow --target=$$HOME/.config/ aerospace
 	stow --target=$$HOME/.config/ starship
+	stow --target=$$HOME scmbreeze
 
