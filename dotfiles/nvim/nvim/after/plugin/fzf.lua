@@ -1,11 +1,23 @@
 local fzf = require('fzf-lua')
 
+-- Override the default binding (ctrl-g) because it conflicts with tmux.
+local custom_grep_actions = {
+    ["ctrl-b"] = { fzf.actions.grep_lgrep },
+    ["ctrl-g"] = false,
+}
+
 fzf.setup {
   keymap = {
     fzf = {
       ["ctrl-q"] = "select-all+accept",
-    }
-  }
+    },
+  },
+  grep = {
+    actions = custom_grep_actions,
+  },
+  live_grep = {
+    actions = custom_grep_actions
+  },
 }
 
 vim.keymap.set('n', '<leader>fg', ":FzfLua live_grep resume=true<cr>", { silent = true })
