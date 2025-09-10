@@ -1,5 +1,8 @@
 local fzf = require('fzf-lua')
 
+-- Replace the default vim.ui.select with fzf-lua.
+fzf.register_ui_select()
+
 -- Override the default binding (ctrl-g) because it conflicts with tmux.
 local custom_grep_actions = {
     ["ctrl-b"] = { fzf.actions.grep_lgrep },
