@@ -45,6 +45,7 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -52,6 +53,8 @@ cmp.setup {
     end,
   },
   mapping = {
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -65,34 +68,7 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
+    ["<Tab>"] = cmp.mapping.confirm { select = true },
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
