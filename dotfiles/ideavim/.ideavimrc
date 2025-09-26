@@ -56,8 +56,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-m> :action MaximizeEditorInSplit<CR>
 
 " Project
-nnoremap \pr :action Maven.Reimport<cr>
-nnoremap \pi :action ImportProject<cr>
+nnoremap \pr :action Maven.Reimport<cr>:action Maven.DownloadAllSourcesAndDocs<cr>
+nnoremap \pi :action ImportProject<cr>:action Maven.DownloadAllSourcesAndDocs<cr>
 nnoremap \pq :action CloseProject<cr>
 nnoremap <leader>w :action WindowMenu<cr>
 nnoremap <leader>W :action ManageRecentProjects<cr>
@@ -157,3 +157,5 @@ nnoremap gt :NERDTreeFind<cr>
 nnoremap gT :NERDTree<cr>
 
 nnoremap yF :action CopyAbsolutePath<cr>
+
+nnoremap \j :%! python -m json.tool<CR>
