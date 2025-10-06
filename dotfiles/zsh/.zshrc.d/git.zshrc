@@ -5,7 +5,7 @@ function push_all() {
 }
 
 git_checkout_main_branch() {
-  for branch in main master master-v9; do
+  for branch in master main master-v9; do
     if git show-ref --verify --quiet "refs/heads/$branch" || \
        git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
       git checkout "$branch"
