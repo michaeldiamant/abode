@@ -5,14 +5,8 @@ function push_all() {
 }
 
 git_checkout_main_branch() {
-  for branch in master main master-v9; do
-    if git show-ref --verify --quiet "refs/heads/$branch" || \
-       git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
-      git checkout "$branch"
-      return
-    fi
-  done
-  echo "❌ No main branch (main/master/master-v9) found in this repo."
+  default_branch="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"
+  git checkout "$default_branch"
 }
 
 
