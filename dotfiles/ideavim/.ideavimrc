@@ -156,6 +156,15 @@ nnoremap <leader>or :action Github.Pull.Request.Review.In.Editor.Toggle<cr>
 nnoremap gt :NERDTreeFind<cr>
 nnoremap gT :NERDTree<cr>
 
+" Markdown
+nnoremap <leader>mp :action TextEditorWithPreview.Layout.PreviewOnly<cr>
+nnoremap <leader>me :action TextEditorWithPreview.Layout.EditorOnly<cr>
+nnoremap <leader>mP :action TextEditorWithPreview.Layout.EditorAndPreview<cr>
+
+" Quicklist (Find and Build)
+nnoremap qn :action NextOccurence<cr>
+nnoremap qp :action PreviousOccurence<cr>
+
 nnoremap yF :action CopyAbsolutePath<cr>
 
 nnoremap \j :%! python -m json.tool<CR>
