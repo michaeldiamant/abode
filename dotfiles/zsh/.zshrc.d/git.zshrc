@@ -9,10 +9,15 @@ git_checkout_main_branch() {
   git checkout "$default_branch"
 }
 
+git_create_branch() {
+  git checkout -b md-$(cat /dev/urandom | tr -dc 'a-z0-9' | head -c8)
+
+}
 
 alias jj="push_all"
 alias JJ="push_all && gh pr view --web || gh pr create --web"
 alias gm="git_checkout_main_branch"
+alias gn="git_create_branch"
 
 function pc() {
   gh pr checkout $1
