@@ -1,7 +1,37 @@
+
+local gruvbox_dark_soft = {
+  normal = {
+    a = { fg = '#282828', bg = '#ebdbb2', gui = 'bold' },
+    b = { fg = '#ebdbb2', bg = '#32302f' },
+    c = { fg = '#ebdbb2', bg = '#32302f' },
+  },
+  insert = {
+    a = { fg = '#282828', bg = '#83a598', gui = 'bold' },
+    b = { fg = '#ebdbb2', bg = '#32302f' },
+    c = { fg = '#ebdbb2', bg = '#32302f' },
+  },
+  visual = {
+    a = { fg = '#282828', bg = '#d3869b', gui = 'bold' },
+    b = { fg = '#ebdbb2', bg = '#32302f' },
+    c = { fg = '#ebdbb2', bg = '#32302f' },
+  },
+  replace = {
+    a = { fg = '#282828', bg = '#fb4934', gui = 'bold' },
+    b = { fg = '#ebdbb2', bg = '#32302f' },
+    c = { fg = '#ebdbb2', bg = '#32302f' },
+  },
+  inactive = {
+    a = { fg = '#a89984', bg = '#32302f', gui = 'bold' },
+    b = { fg = '#a89984', bg = '#32302f' },
+    c = { fg = '#a89984', bg = '#32302f' },
+  },
+}
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
+    theme = gruvbox_dark_soft,
+    -- theme = 'gruvbox',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {

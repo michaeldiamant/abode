@@ -1,6 +1,7 @@
 require("gruvbox").setup({
+  contrast = "soft",
   overrides = {
-    SignColumn = { bg = "#282828" }, -- Match background color of line numbers.
+    SignColumn = { bg = "#32302f" }, -- Match background color of line numbers.
   }
 })
 
