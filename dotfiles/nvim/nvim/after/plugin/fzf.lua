@@ -16,6 +16,7 @@ fzf.setup {
     },
   },
   grep = {
+    rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden",
     actions = custom_grep_actions,
   },
   live_grep = {
