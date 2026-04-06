@@ -30,7 +30,8 @@ local gruvbox_dark_soft = {
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = gruvbox_dark_soft,
+    -- theme = gruvbox_dark_soft,
+    theme = "gruvbox_light",
     -- theme = 'gruvbox',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},

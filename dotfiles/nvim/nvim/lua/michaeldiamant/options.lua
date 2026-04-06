@@ -1,4 +1,8 @@
-# vim.opt.guicursor = "" # Keep block cursor in insert mode.
+-- vim.opt.guicursor = "" -- Keep block cursor in insert mode.
+-- Use iCursor highlight for insert mode so cursor is visible on light backgrounds.
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver30-iCursor,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor"
+-- guicursor override for horizontal underline (hor) for insert mode cursor.
+-- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:hor30-iCursor,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor"
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
