@@ -69,7 +69,9 @@ nnoremap \f :action ActivateFindToolWindow<cr>
 nnoremap \t :action ActivateProblemsViewToolWindow<cr>
 nnoremap <leader>t :action ActivateTerminalToolWindow<cr>
 nnoremap \r :action ActivateRunToolWindow<cr>
+nnoremap \d :action ActivateDebugToolWindow<cr>
 nnoremap \b :action ActivateBuildToolWindow<cr>
+nnoremap <leader>rc :action editRunConfigurations<cr>
 nnoremap <leader>b :action CompileDirty<cr>
 nnoremap <leader>S :action SelectInProjectView<cr>
 nnoremap <leader>os :action ActivateStructureToolWindow<cr>
@@ -100,7 +102,9 @@ vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
 " Common actions
 nnoremap <leader>oi :action OrganizeImports<cr>
-nnoremap <leader>r :action Run<cr>
+nnoremap <leader>rr :action Run<cr>
+nnoremap <leader>rd :action Debug<cr>
+nnoremap <leader><S-d> :action DebugClass<cr>
 nnoremap <leader><S-r> :action RunClass<cr>
 nnoremap <leader>n :action RenameElement<cr>
 
