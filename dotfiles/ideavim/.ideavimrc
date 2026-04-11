@@ -73,6 +73,7 @@ nnoremap \d :action ActivateDebugToolWindow<cr>
 nnoremap \b :action ActivateBuildToolWindow<cr>
 nnoremap <leader>rc :action editRunConfigurations<cr>
 nnoremap <leader>b :action CompileDirty<cr>
+nnoremap <leader>B :action CompileProject<cr>
 nnoremap <leader>S :action SelectInProjectView<cr>
 nnoremap <leader>os :action ActivateStructureToolWindow<cr>
 

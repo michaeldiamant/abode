@@ -23,7 +23,6 @@
         <entry key="ReadOnlyAttribute" value="false" />
         <entry key="SumnekoBar" value="false" />
         <entry key="TypeScriptInfo" value="false" />
-        <entry key="github.copilot.statusBarWidgetFactory" value="false" />
         <entry key="webDeployment.default.server.widget" value="false" />
       </map>
     </option>
