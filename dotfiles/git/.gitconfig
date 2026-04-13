@@ -10,3 +10,10 @@
 	autoSetupRemote = true
 [core]
 	pager = less
+[alias]
+        top-files = "!f() { git log --format=format: --name-only --since='1 year ago' -- \"$@\" | grep -v '^$' | sort | uniq -c | sort -nr | head -n 20; }; f"
+	top-contributors = "!git shortlog -sn --no-merges"
+	top-bugs = "!git log -i -E --grep='fix|bug|broken' --name-only --format='' | sort | uniq -c | sort -nr | head -20"
+	repo-speed = "!git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c"
+        firefights = "!git log --graph --format='%C(yellow)%h%Creset %C(magenta)%ad%Creset %s' --date=short --since='1 year ago' | grep -iE 'revert|hotfix|emergency|broken'"
+
