@@ -30,7 +30,7 @@ set commentary " https://github.com/tpope/vim-commentary
 set surround " https://github.com/tpope/vim-surround
 set highlightedyank
 set NERDTree
-set VimEverywhere
+" set VimEverywhere " Disable because it interferes with searching
 
 " Copy into system clipboard
 nnoremap <C-y> "+y
