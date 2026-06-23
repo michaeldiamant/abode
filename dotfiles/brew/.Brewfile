@@ -191,8 +191,6 @@ brew "zip"
 brew "zlib"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
-# Application launcher and productivity software
-cask "alfred"
 # Redis desktop manager
 cask "another-redis-desktop-manager"
 # Display management tool

@@ -7,7 +7,6 @@ stow:
 	stow --target=$$HOME tmux
 	stow --target=$$HOME zsh
 	stow --target=$$HOME/.config/ nvim
-	stow --target=$$HOME/Library/Application\ Support\/Alfred/ alfred
 	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2025.3/ intellij
 	stow --target=$$HOME/.config/ yabai
 	stow --target=$$HOME/.config/ skhd
