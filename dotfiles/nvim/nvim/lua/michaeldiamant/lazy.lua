@@ -37,8 +37,6 @@ require("lazy").setup({
 
   -- LSP
   "neovim/nvim-lspconfig", -- enable LSP
-  "williamboman/nvim-lsp-installer", -- simple to use language server installer
-  "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
   { "williamboman/mason.nvim", build = ":MasonUpdate" }, -- :MasonUpdate updates registry contents
   "williamboman/mason-lspconfig.nvim",
   "mfussenegger/nvim-jdtls",
@@ -61,7 +59,6 @@ require("lazy").setup({
   "JalaiAmitahl/maven-compiler.vim", -- Works for compile errors but not tests
 
   -- Motions
-  "tpope/vim-commentary", -- Comment with gc
   "tpope/vim-unimpaired",
   "tpope/vim-surround",
 
