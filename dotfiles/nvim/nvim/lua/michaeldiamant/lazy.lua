@@ -45,8 +45,8 @@ require("lazy").setup({
   "RRethy/vim-illuminate", -- Highlight LSP symbol references under cursor
 
   -- -- Treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  "nvim-treesitter/nvim-treesitter-textobjects",
+  { "nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main"},
   "nvim-treesitter/nvim-treesitter-context", -- Shows the current function/class as float window at the top of the window
 
   "ibhagwan/fzf-lua",
