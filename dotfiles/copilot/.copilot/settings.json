@@ -1,0 +1,20 @@
+{
+  "colorMode": "dim",
+  "tabs": {
+    "enabled": false
+  },
+  "footer": {
+    "showModelEffort": false,
+    "showDirectory": false,
+    "showBranch": false,
+    "showContextWindow": true,
+    "showQuota": true,
+    "showAiUsed": true,
+    "showAgent": true,
+    "showCodeChanges": false,
+    "showUsername": false,
+    "showSandbox": true,
+    "showYolo": false,
+    "showCustom": false
+  }
+}

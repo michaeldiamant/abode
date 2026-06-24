@@ -1,6 +1,7 @@
 stow:
 	stow --target=$$HOME asdf 
 	stow --target=$$HOME brew
+	stow --target=$$HOME copilot
 	stow --target=$$HOME git
 	stow --target=$$HOME hammerspoon
 	stow --target=$$HOME ideavim
