@@ -8,7 +8,7 @@ stow:
 	stow --target=$$HOME tmux
 	stow --target=$$HOME zsh
 	stow --target=$$HOME/.config/ nvim
-	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2025.3/ intellij
+	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2026.2/ intellij
 	stow --target=$$HOME/.config/ aerospace
 	stow --target=$$HOME/.config/ starship
 	stow --target=$$HOME scmbreeze
