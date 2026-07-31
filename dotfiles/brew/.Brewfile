@@ -1,16 +1,8 @@
-tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
-tap "aurc/loggo"
-tap "datadog-labs/pack"
 tap "derailed/k9s"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
-tap "nikitabobko/tap"
+tap "nikitabobko/tap", trusted: true
 tap "oven-sh/bun"
 # Run your GitHub Actions locally
 brew "act"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Macro processing language
@@ -19,28 +11,34 @@ brew "m4"
 brew "autoconf"
 # Securely manage AWS API credentials using AWS SSO
 brew "aws-sso-cli"
-# C parser in Python
-brew "pycparser"
-# C Foreign Function Interface for Python
-brew "cffi"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Library for command-line editing
 brew "readline"
 # Command-line interface for SQLite
 brew "sqlite"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # GNU binary tools for native development
 brew "binutils"
-# GNU internationalization (i18n) and localization (l10n) library
-brew "gettext"
+# C parser in Python
+brew "pycparser"
+# C Foreign Function Interface for Python
+brew "cffi"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Utility that creates projects from templates
 brew "cookiecutter"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Package acting as bridge between Node projects and their package managers
+brew "corepack"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Utility that creates projects from templates and maintains the cruft afterwards
@@ -63,14 +61,6 @@ brew "docutils"
 brew "ed"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Asynchronous event library
-brew "libevent"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# Compression/decompression library aiming for high speed
-brew "snappy"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Fast Lexical Analyzer, generates Scanners (tokenizers)
@@ -93,6 +83,8 @@ brew "gnu-sed"
 brew "gnu-tar"
 # GNU implementation of which utility
 brew "gnu-which"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Apply a diff file to an original
@@ -115,22 +107,24 @@ brew "jnv"
 brew "jq"
 # FAST Kubernetes manifests validator, with support for Custom Resources!
 brew "kubeconform"
-# Kubernetes command-line interface
-brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Pager program similar to more
 brew "less"
 # Terminal file manager
 brew "lf"
-# Graphics Library
-brew "mesa"
+# Asynchronous event library
+brew "libevent"
 # Keyboard handling library
 brew "libxkbcommon"
 # Utility for directing compilation
 brew "make"
+# Graphics Library
+brew "mesa"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Adds an OCR text layer to scanned PDF files
@@ -153,6 +147,8 @@ brew "screen"
 brew "shellcheck"
 # Terminal based presentation tool
 brew "slides"
+# Compression/decompression library aiming for high speed
+brew "snappy"
 # Editor of encrypted files
 brew "sops"
 # Cross-shell prompt for astronauts
@@ -173,6 +169,8 @@ brew "tmux"
 brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Executes a program periodically, showing output fullscreen
@@ -191,6 +189,8 @@ brew "yq"
 brew "zip"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s", trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # Redis desktop manager
@@ -214,12 +214,8 @@ cask "hammerspoon"
 cask "handy"
 # Convert your caps lock key or any of your modifier keys to the hyper key
 cask "hyperkey"
-# HTTP and GraphQL Client
-cask "insomnium"
 # Java IDE by JetBrains
 cask "intellij-idea"
-# IDE for Java development - community edition
-cask "intellij-idea-ce"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Open-source keystroke visualiser
@@ -233,4 +229,3 @@ cask "slack"
 # Menu bar clock
 cask "utc-menu-clock"
 uv "posting"
-npm "corepack"

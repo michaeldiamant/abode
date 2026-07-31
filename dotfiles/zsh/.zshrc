@@ -78,7 +78,7 @@ export EDITOR=nvim
 # Add wisely, as too many plugins slow down shell startup.
 plugins+=(asdf)
 plugins+=(git)
-plugins+=(zsh-vi-mode)
+plugins+=(vi-mode)
 plugins+=(fzf-tab)
 plugins+=(direnv)
 source $ZSH/oh-my-zsh.sh
@@ -109,7 +109,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 for f in "${HOME}"/.zshrc.d/*.zshrc;
