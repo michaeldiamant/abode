@@ -78,7 +78,7 @@ export EDITOR=nvim
 # Add wisely, as too many plugins slow down shell startup.
 plugins+=(asdf)
 plugins+=(git)
-plugins+=(vi-mode)
+plugins+=(zsh-vi-mode)
 plugins+=(fzf-tab)
 plugins+=(direnv)
 source $ZSH/oh-my-zsh.sh
