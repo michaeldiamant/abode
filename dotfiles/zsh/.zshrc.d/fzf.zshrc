@@ -1,6 +1,4 @@
-source <(fzf --zsh)
-
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+zvm_after_init_commands+=('source <(fzf --zsh)')
 
 # Gruvbox Material Light Soft
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
