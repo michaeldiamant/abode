@@ -1,6 +1,6 @@
 tap "derailed/k9s"
 tap "nikitabobko/tap", trusted: true
-tap "oven-sh/bun"
+tap "oven-sh/bun", trusted: true
 # Run your GitHub Actions locally
 brew "act"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
