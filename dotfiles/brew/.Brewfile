@@ -199,6 +199,8 @@ cask "another-redis-desktop-manager"
 cask "betterdisplay"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Menu bar timezone tracker and compact calendar
+cask "clocker"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # Universal database tool and SQL client
@@ -226,6 +228,4 @@ cask "postman"
 cask "redis-insight"
 # Team communication and collaboration software
 cask "slack"
-# Menu bar clock
-cask "utc-menu-clock"
 uv "posting"
