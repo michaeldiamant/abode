@@ -4,8 +4,8 @@
 [pull]
 	rebase = false
 
-[includeIf "gitdir:~/dev/tvp/"]
-    path = ~/.gitconfig.tvp
+[includeIf "gitdir:~/dev/work/"]
+    path = ~/.gitconfig.work
 [push]
 	autoSetupRemote = true
 [core]

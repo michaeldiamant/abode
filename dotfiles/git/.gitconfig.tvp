@@ -1,8 +1,0 @@
-[user]
-	name = Michael-Diamant_tvlport
-	email = michael.diamant@travelport.com
-[pull]
-	rebase = false
-
-[url "git@github.com:"]
-  insteadOf = https://github.com
