@@ -208,6 +208,8 @@ cask "dbeaver-community"
 cask "font-fira-code-nerd-font"
 cask "font-iosevka"
 cask "font-jetbrains-mono"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Tools to protect your emails and files
 cask "gpg-suite"
 # Desktop automation application

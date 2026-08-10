@@ -1,0 +1,7 @@
+window-decoration = none
+
+# gruvbox-material-soft-light comes from cloning https://github.com/vlanx/gruvbox-material-ghostty
+theme = gruvbox-material-soft-light
+
+font-family = FiraCode Nerd Font Mono
+font-size = 16

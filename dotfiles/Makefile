@@ -11,5 +11,6 @@ stow:
 	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2026.2/ intellij
 	stow --target=$$HOME/.config/ aerospace
 	stow --target=$$HOME/.config/ starship
+	stow --target=$$HOME/.config/ ghostty
 	stow --target=$$HOME scmbreeze
 
