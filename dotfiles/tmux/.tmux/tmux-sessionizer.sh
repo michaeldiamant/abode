@@ -7,7 +7,7 @@ if [[ $# -eq 1 ]]; then
 else
     dirs=()
     dirs+=($(find ~/dev -mindepth 1 -maxdepth 1 -type d))
-    dirs+=($(find ~/dev/work -mindepth 2 -maxdepth 2 -type d))
+    dirs+=($(find ~/dev/work -mindepth 1 -maxdepth 1 -type d))
     selected=$(printf '%s\n' "${dirs[@]}" | fzf)
 fi
 
