@@ -6,3 +6,4 @@ nodejs 26.5.1
 terraform 1.15.8
 terragrunt 1.1.2
 python 3.14.6
+gradle 9.7.0

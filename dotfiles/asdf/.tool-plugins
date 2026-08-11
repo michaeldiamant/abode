@@ -1,3 +1,4 @@
+gradle		https://github.com/rfrancis/asdf-gradle.git
 helm		https://github.com/Antiarchitect/asdf-helm.git
 java		https://github.com/halcyon/asdf-java.git
 maven		https://github.com/halcyon/asdf-maven.git
