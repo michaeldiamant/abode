@@ -199,6 +199,8 @@ cask "another-redis-desktop-manager"
 cask "betterdisplay"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Menu bar timezone tracker and compact calendar
 cask "clocker"
 # Brings the power of Copilot coding agent directly to your terminal
