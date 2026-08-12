@@ -4,6 +4,8 @@
       <map>
         <entry key="bigger.font.in.project.view" value="true" />
         <entry key="confirm.rerun.with.termination" value="false" />
+        <entry key="gateway.wsl.open.projects.natively" value="true" />
+        <entry key="open.devcontainer.projects.natively" value="true" />
         <entry key="terminal.buffer.max.lines.count" value="50000" />
       </map>
     </option>
