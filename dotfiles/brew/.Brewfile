@@ -53,8 +53,6 @@ brew "difftastic"
 brew "diffutils"
 # Load/unload environment variables based on $PWD
 brew "direnv"
-# Pack, ship and run any application as a lightweight container
-brew "docker"
 # Text processing system for reStructuredText
 brew "docutils"
 # Classic UNIX line editor
@@ -207,6 +205,8 @@ cask "clocker"
 cask "copilot-cli"
 # Universal database tool and SQL client
 cask "dbeaver-community"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
 cask "font-fira-code-nerd-font"
 cask "font-iosevka"
 cask "font-jetbrains-mono"
