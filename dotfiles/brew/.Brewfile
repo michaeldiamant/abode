@@ -1,4 +1,5 @@
 tap "derailed/k9s"
+tap "docker/tap", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "oven-sh/bun", trusted: true
 # Run your GitHub Actions locally
@@ -53,6 +54,8 @@ brew "difftastic"
 brew "diffutils"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
 # Text processing system for reStructuredText
 brew "docutils"
 # Classic UNIX line editor
@@ -230,6 +233,8 @@ cask "keycastr"
 cask "postman"
 # GUI for streamlined Redis application development
 cask "redis-insight"
+# Build, run, and govern agents across the software development lifecycle
+cask "docker/tap/sbx", trusted: true
 # Team communication and collaboration software
 cask "slack"
 uv "posting"

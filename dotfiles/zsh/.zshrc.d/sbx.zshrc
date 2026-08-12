@@ -1,0 +1,1 @@
+export SBX_NO_TELEMETRY=1
