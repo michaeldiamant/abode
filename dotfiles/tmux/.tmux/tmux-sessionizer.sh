@@ -8,14 +8,11 @@ else
     # Recursively look for dirs with sessionizer-project marker. Notes:
     # * For monorepos, projects are manually marked to denote eligibility for sessionizer.
     # * Uses awk to stop traversing once marker file found.
-    dirs=$(fd --max-depth 10 -H -I -t f '^(\.sessionizer-project)$' ~/dev/work -X dirname | sort | awk '
+    dirs=$(fd --max-depth 10 -H -I -t f '^(\.sessionizer-project)$' ~/dev -X dirname | sort | awk '
         NR == 1 { print; last=$0; next } 
         index($0, last "/") != 1 { print; last=$0 }
     ')
     
-    # Add top-level dirs that do not have sessionizer-project markers.
-    dirs+=($(find ~/dev -mindepth 1 -maxdepth 1 -type d))
-
     selected=$(printf '%s\n' "${dirs[@]}" | fzf)
 fi
 
