@@ -5,13 +5,13 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    # Recursively look for dirs with sessionizer-project marker. Notes:
-    # * For monorepos, projects are manually marked to denote eligibility for sessionizer.
-    # * Uses awk to stop traversing once marker file found.
-    dirs=$(fd --max-depth 10 -H -I -t f '^(\.sessionizer-project)$' ~/dev -X dirname | sort | awk '
-        NR == 1 { print; last=$0; next } 
-        index($0, last "/") != 1 { print; last=$0 }
-    ')
+    dirs=$(fd --max-depth 10 -H -I -t f '^(\.sessionizer-project)$' ~/dev -X dirname | sort)
+
+    # Like above, but uses awk to stop searching once a sessionizer-project marker is found.
+    # dirs=$(fd --max-depth 10 -H -I -t f '^(\.sessionizer-project)$' ~/dev -X dirname | sort | awk '
+    #     NR == 1 { print; last=$0; next }
+    #     index($0, last "/") != 1 { print; last=$0 }
+    # ')
     
     selected=$(printf '%s\n' "${dirs[@]}" | fzf)
 fi
