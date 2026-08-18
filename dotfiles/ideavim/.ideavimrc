@@ -57,8 +57,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-m> :action MaximizeEditorInSplit<CR>
 
 " Project
-nnoremap \pr :action Maven.Reimport<cr>:action Maven.DownloadAllSourcesAndDocs<cr>
-nnoremap \pi :action ImportProject<cr>:action Maven.DownloadAllSourcesAndDocs<cr>
+nnoremap \prm :action Maven.Reimport<cr>:action Maven.DownloadAllSourcesAndDocs<cr>
+nnoremap \prg :action ExternalSystem.RefreshAllProjects<cr>:action Gradle.RefreshDependencies<cr>
+nnoremap \pim :action ImportProject<cr>:action Maven.DownloadAllSourcesAndDocs<cr>
+nnoremap \pig :action ImportProject<cr>:action Gradle.RefreshDependencies<cr>
 nnoremap \pq :action CloseProject<cr>
 nnoremap <leader>w :action WindowMenu<cr>
 nnoremap <leader>W :action ManageRecentProjects<cr>

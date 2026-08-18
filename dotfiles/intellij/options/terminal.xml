@@ -1,5 +1,6 @@
 <application>
   <component name="TerminalOptionsProvider">
+    <option name="showCompletionPopupAutomatically" value="false" />
     <option name="terminalEngine" value="CLASSIC" />
   </component>
 </application>
