@@ -136,6 +136,8 @@ brew "openshift-cli"
 brew "parallel"
 # Python package management tool
 brew "poetry"
+# Modern API client that lives in your terminal
+brew "posting"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Search tool like grep and The Silver Searcher

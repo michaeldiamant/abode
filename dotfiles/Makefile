@@ -6,12 +6,13 @@ stow:
 	stow --target=$$HOME git
 	stow --target=$$HOME hammerspoon
 	stow --target=$$HOME ideavim
+	stow --target=$$HOME scmbreeze
 	stow --target=$$HOME tmux
 	stow --target=$$HOME zsh
-	stow --target=$$HOME/.config/ nvim
-	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2026.2/ intellij
 	stow --target=$$HOME/.config/ aerospace
-	stow --target=$$HOME/.config/ starship
+	stow --target=$$HOME/.config/ nvim
+	stow --target=$$HOME/.config/ posting
 	stow --target=$$HOME/.config/ ghostty
-	stow --target=$$HOME scmbreeze
+	stow --target=$$HOME/.config/ starship
+	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2026.2/ intellij
 

@@ -1,0 +1,5 @@
+theme: gruvbox
+spacing: compact
+keymap:
+  save-request: S
+  open-in-editor: ctrl+y
