@@ -6,11 +6,11 @@ function push_all() {
 
 git_checkout_main_branch() {
   default_branch="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"
-  git checkout "$default_branch"
+  git switch "$default_branch"
 }
 
 git_create_branch() {
-  git checkout -b md-$(cat /dev/urandom | tr -dc 'a-z0-9' | head -c8)
+  git switch -c md-$(cat /dev/urandom | tr -dc 'a-z0-9' | head -c8)
 
 }
 
