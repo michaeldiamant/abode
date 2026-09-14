@@ -1,3 +1,5 @@
+ config-version = 2
+
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
@@ -159,9 +161,13 @@ if.app-id = 'com.brave.Browser'
 run = 'layout tiling'
 
 [[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij'
 run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
-if.app-id = 'Cisco-Systems.Spark'
-run = "move-node-to-workspace 0"
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = "move-node-to-workspace 3"
