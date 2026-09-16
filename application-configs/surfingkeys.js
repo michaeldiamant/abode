@@ -8,3 +8,6 @@ api.map('<Ctrl-k>', 'E');
 
 settings.focusFirstCandidate = false;
 settings.tabsThreshold = 0;
+
+api.Hints.style("font-size: 12pt;");
+api.Hints.style("font-size: 12pt;", "text");
