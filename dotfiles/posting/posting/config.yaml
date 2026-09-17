@@ -1,5 +1,7 @@
 theme: gruvbox
 spacing: compact
 keymap:
+  open-in-editor: ctrl+q
   save-request: S
-  open-in-editor: ctrl+y
+  search-requests: ctrl+q
+  toggle-collection: H
