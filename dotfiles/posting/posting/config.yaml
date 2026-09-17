@@ -5,3 +5,6 @@ keymap:
   save-request: S
   search-requests: ctrl+q
   toggle-collection: H
+
+collection_browser:
+  show_on_startup: false
