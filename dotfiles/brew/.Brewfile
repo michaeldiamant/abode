@@ -202,6 +202,8 @@ cask "another-redis-desktop-manager"
 cask "betterdisplay"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Utility that prevents the system from going to sleep
+cask "caffeine"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Menu bar timezone tracker and compact calendar
