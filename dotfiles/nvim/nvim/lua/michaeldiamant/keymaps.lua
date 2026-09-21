@@ -48,7 +48,7 @@ vim.keymap.set("n", "<C-s>l", ":vertical resize +3<CR>")
 vim.keymap.set("n", "gt", ":NERDTreeFind<CR><C-w>|")
 vim.keymap.set("n", "gT", ":NERDTree<CR><C-w>|")
 
-vim.keymap.set("n", "\\j", ":%! python -m json.tool<CR>")
+vim.keymap.set("n", "\\j", ":%! python3 -m json.tool<CR>")
 vim.keymap.set('n', '<leader>vl', function()
   local current = vim.diagnostic.config().virtual_lines
   vim.diagnostic.config({ virtual_lines = not current })

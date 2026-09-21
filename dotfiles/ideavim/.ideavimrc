@@ -175,4 +175,4 @@ nnoremap qp :action PreviousOccurence<cr>
 
 nnoremap yF :action CopyAbsolutePath<cr>
 
-nnoremap \j :%! python -m json.tool<CR>
+nnoremap \j :%! python3 -m json.tool<CR>
