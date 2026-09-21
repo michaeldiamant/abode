@@ -13,6 +13,7 @@
       <map>
         <entry key="CodeStyleStatusBarWidget" value="false" />
         <entry key="Encoding" value="false" />
+        <entry key="GitScopeStatusBar" value="false" />
         <entry key="IdeaVim-Icon" value="false" />
         <entry key="LineSeparator" value="false" />
         <entry key="Notifications" value="false" />
