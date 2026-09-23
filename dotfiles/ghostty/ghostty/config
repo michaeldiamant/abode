@@ -5,3 +5,6 @@ theme = gruvbox-material-soft-light
 
 font-family = FiraCode Nerd Font Mono
 font-size = 16
+
+# Shortcut for tmux session picker (ctrl+a f)
+keybind = ctrl+shift+w=text:\x01f
