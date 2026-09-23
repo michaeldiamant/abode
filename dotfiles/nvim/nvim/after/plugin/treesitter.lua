@@ -1,3 +1,9 @@
+require("nvim-treesitter").setup({
+  ensure_installed = {
+    "hurl"
+  }
+})
+
 require("nvim-treesitter-textobjects").setup {
   move = {
     -- whether to set jumps in the jumplist

@@ -98,6 +98,8 @@ brew "grep"
 brew "gron"
 # Popular GNU data compression program
 brew "gzip"
+# Run and Test HTTP Requests with plain text and curl
+brew "hurl"
 # JSON diff and patch
 brew "jd"
 # Command-line pager for JSON data

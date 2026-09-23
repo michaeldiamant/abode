@@ -72,6 +72,8 @@ require("lazy").setup({
   -- git
   "lewis6991/gitsigns.nvim",
 
+  { "jellydn/hurl.nvim", dependencies = { "MunifTanjim/nui.nvim"}, ft = "hurl" },
+
   "github/copilot.vim",
   {
     "CopilotC-Nvim/CopilotChat.nvim",
