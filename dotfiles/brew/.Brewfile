@@ -124,6 +124,10 @@ brew "lf"
 brew "libevent"
 # Keyboard handling library
 brew "libxkbcommon"
+# Powerful, lightweight programming language
+brew "lua"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Utility for directing compilation
 brew "make"
 # Graphics Library
