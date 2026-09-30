@@ -1,0 +1,20 @@
+allprojects {
+    tasks.withType(Test).configureEach {
+        // Prevent test matching failure from failing test run so that --tests can be run against all modules.
+        filter {
+            setFailOnNoMatchingTests(false)
+        }
+
+        // Print test run summary.
+        testLogging {
+          afterSuite { desc, result ->
+            if (desc.parent == null) {
+              println("\nResults: ${result.resultType} (${result.testCount} tests, " +
+                  "${result.successfulTestCount} successes, ${result.failedTestCount} failures, " +
+                  "${result.skippedTestCount} skipped)")
+            }
+          }
+        }
+    }
+}
+

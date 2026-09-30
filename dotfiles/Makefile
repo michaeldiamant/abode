@@ -8,6 +8,7 @@ stow:
 	stow --target=$$HOME brew
 	stow --target=$$HOME claude
 	stow --target=$$HOME copilot
+	stow --target=$$HOME gradle
 	stow --target=$$HOME git
 	stow --target=$$HOME hammerspoon
 	stow --target=$$HOME ideavim
