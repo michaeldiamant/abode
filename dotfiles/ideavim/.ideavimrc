@@ -9,6 +9,8 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+" ideawindowjumps won't take effect until <C-o> and <C-i> overrides are removed.
+set ideawindowjumps
 
 " Set conflicting handler preferences
 sethandler <C-i> n-v-i:vim
