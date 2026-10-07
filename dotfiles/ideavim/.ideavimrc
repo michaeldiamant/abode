@@ -178,3 +178,4 @@ nnoremap qp :action PreviousOccurence<cr>
 nnoremap yF :action CopyAbsolutePath<cr>
 
 nnoremap \j :%! python3 -m json.tool<CR>
+nnoremap \nr :action MarkNotificationsAsRead<CR>
