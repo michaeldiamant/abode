@@ -14,10 +14,6 @@ brew "autoconf"
 brew "aws-sso-cli"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
-# Library for command-line editing
-brew "readline"
-# Command-line interface for SQLite
-brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Official Amazon AWS command-line interface
@@ -140,6 +136,8 @@ brew "ocrmypdf"
 brew "openshift-cli"
 # Shell command parallelization utility
 brew "parallel"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Python package management tool
 brew "poetry"
 # Modern API client that lives in your terminal
