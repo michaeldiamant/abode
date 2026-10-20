@@ -20,6 +20,7 @@ stow:
 	stow --target=$$HOME/.config/ ghostty
 	stow --target=$$HOME/.config/ nvim
 	stow --target=$$HOME/.config/ posting
+	stow --target=$$HOME/.config/ tlsbxw
 	stow --target=$$HOME/.config/ starship
 	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2026.2/ intellij
 
