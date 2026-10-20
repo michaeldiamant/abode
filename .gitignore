@@ -1,3 +1,4 @@
 .DS_Store
 
 dotfiles/tmux/.tmux/plugins
+dotfiles/copilot/.copilot/settings.json.lock

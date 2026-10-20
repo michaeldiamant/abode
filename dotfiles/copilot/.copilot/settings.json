@@ -1,20 +1,30 @@
 {
-  "colorMode": "dim",
-  "tabs": {
+  "theme": "default",
+  "effortLevel": "low",
+  "banner": "never",
+  "model": "claude-sonnet-5.5",
+  "footer": {
+    "showDirectory": false,
+    "showAgent": true,
+    "showAiUsed": true,
+    "showBranch": true,
+    "showCiStatus": false,
+    "showCodeChanges": false,
+    "showContextWindow": true,
+    "showCustom": true,
+    "showPullRequest": true,
+    "showQuota": true,
+    "showSandbox": false,
+    "showSchedules": true,
+    "showUsername": false,
+    "showYolo": false
+
+  },
+  "sidebar": {
     "enabled": false
   },
-  "footer": {
-    "showModelEffort": false,
-    "showDirectory": false,
-    "showBranch": false,
-    "showContextWindow": true,
-    "showQuota": true,
-    "showAiUsed": true,
-    "showAgent": true,
-    "showCodeChanges": false,
-    "showUsername": false,
-    "showSandbox": true,
-    "showYolo": false,
-    "showCustom": false
+  "statusLine": { "type": "command", "command": "$HOME/.copilot/aic-guard/aic-status.sh", "refreshInterval": 30 },
+  "tabs": {
+    "enabled": false
   }
 }
