@@ -12,19 +12,24 @@
     "showCodeChanges": false,
     "showContextWindow": true,
     "showCustom": true,
+    "showModelEffort": true,
     "showPullRequest": true,
     "showQuota": true,
     "showSandbox": false,
     "showSchedules": true,
     "showUsername": false,
     "showYolo": false
-
   },
   "sidebar": {
     "enabled": false
   },
-  "statusLine": { "type": "command", "command": "$HOME/.copilot/aic-guard/aic-status.sh", "refreshInterval": 30 },
+  "statusLine": {
+    "type": "command",
+    "command": "$HOME/.copilot/aic-guard/aic-status.sh",
+    "refreshInterval": 30
+  },
   "tabs": {
     "enabled": false
-  }
+  },
+  "mouse": false
 }
