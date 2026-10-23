@@ -1,0 +1,4 @@
+k9s:
+  # readOnly: true
+  ui:
+    skin: gruvbox-material-light-soft
