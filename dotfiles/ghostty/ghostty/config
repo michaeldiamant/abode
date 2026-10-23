@@ -29,13 +29,19 @@ keybind = cmd+9=unbind
 keybind = cmd+digit_9=unbind
 keybind = cmd+0=unbind
 keybind = cmd+digit_0=unbind
-keybind = cmd+1=text:\x1b[1;3P # M-F1
-keybind = cmd+2=text:\x1b[1;3Q # M-F2
-keybind = cmd+3=text:\x1b[1;3R # M-F3
-keybind = cmd+4=text:\x1b[1;3S # M-F4
-keybind = cmd+5=text:\x1b[15;3~ # M-F5
+# M-F1
+keybind = cmd+1=text:\x1b[1;3P
+# M-F2
+keybind = cmd+2=text:\x1b[1;3Q
+# M-F3
+keybind = cmd+3=text:\x1b[1;3R
+# M-F4
+keybind = cmd+4=text:\x1b[1;3S
+# M-F5
+keybind = cmd+5=text:\x1b[15;3~
 # keybind = cmd+6=text:\x1b[17;3~ # M-F6
 # keybind = cmd+7=text:\x1b[18;3~ # M-F7
 # keybind = cmd+8=text:\x1b[19;3~ # M-F8
 # keybind = cmd+9=text:\x1b[20;3~ # M-F9
-keybind = cmd+0=text:\x1b[24;3~ # M-F12
+# M-F12
+keybind = cmd+0=text:\x1b[24;3~ 
