@@ -20,10 +20,13 @@ stow:
 	stow --target=$$HOME/.config/ ghostty
 	stow --target=$$HOME/.config/ nvim
 	stow --target=$$HOME/.config/ posting
-	stow --target=$$HOME/.config/ tlsbxw
 	stow --target=$$HOME/.config/ starship
 	stow --target=$$HOME/Library/Application\ Support k9s
 	stow --target=$$HOME/Library/Application\ Support\/JetBrains/IntelliJIdea2026.2/ intellij
 
 agents:
 	. ./makefile_utils.sh; agents_symlink "$(AGENTS_SYMLINK_DRYRUN)"
+
+tlsbxw:
+	# tlsbxw requires absolute path symlinks, which is incompatible with stow (uses relative paths).
+	ln -s  ~/dev/abode/dotfiles/tlsbxw/tlsbxw/config.jsonc ~/.config/tlsbxw/config.jsonc
