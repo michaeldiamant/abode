@@ -148,7 +148,7 @@ vnoremap <leader>gb :action Github.Open.In.Browser<cr>
 nnoremap <leader>gp :action com.github.shiraji.findpullrequest.action.FindPullRequestAction<cr>
 nnoremap <leader>yp :action com.github.shiraji.findpullrequest.action.FindPullRequestCopyAction<cr>
 
-nnoremap <leader>gl :action ActivateGitHubCopilotChatToolWindow<cr>
+nnoremap <leader>gl :action ActivateAIAssistantToolWindow<cr>
 
 nnoremap <leader>og :action Generate<cr>
 

@@ -1,0 +1,8 @@
+{
+  "agent_servers": {
+    "Copilot (sandbox)": {
+      "command": "/Users/michael/.local/bin/tlsbxw",
+      "args": ["up", "-f", "--", "--acp", "--stdio"]
+    }
+  }
+}

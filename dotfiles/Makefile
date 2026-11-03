@@ -13,6 +13,7 @@ stow:
 	stow --target=$$HOME gradle
 	stow --target=$$HOME hammerspoon
 	stow --target=$$HOME ideavim
+	stow --target=$$HOME jetbrains
 	stow --target=$$HOME scmbreeze
 	stow --target=$$HOME tmux
 	stow --target=$$HOME zsh
