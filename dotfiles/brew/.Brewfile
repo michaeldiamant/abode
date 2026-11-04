@@ -241,8 +241,6 @@ cask "keycastr"
 cask "postman"
 # GUI for streamlined Redis application development
 cask "redis-insight"
-# Build, run, and govern agents across the software development lifecycle
-cask "docker/tap/sbx", trusted: true
 # Team communication and collaboration software
 cask "slack"
 uv "posting"
