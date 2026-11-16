@@ -21,6 +21,8 @@ For each task you define, create a task detail file called "$task_id-$task_title
 * Big Picture - Concise explanation of the broader objective that gives the agent enough context to understand the problem space and see how the task moves us closer to the workstream objective.
 * Requirements - Open-form section where you itemize constraints + requirements and define the definition of done. 
 
+In the PR description, include a link to the rendered markdown view for the task summary on the PR's branch. Linking to the branch (instead of commit) lets reviewers quickly jump to the task summary.
+
 ## Task Identification
 You must decompose the user's broader objective into a series of incremental steps. Each step (task) should be the size of 1 PR. So that we can iterate quickly, prefer task scopes that produce PRs which have limited + independent scope, minimize inter-dependencies, and are easy to review. Tasks include writing tests. Your role is to identify how to split the work and identify dependencies, and you are not implementing tasks.
 
@@ -51,6 +53,8 @@ Perform up to 3 rounds of clarifying questions. Number your questions and ask up
 3. You do not see a clear decomposition of tasks and want user feedback on tradeoffs.
 
 After each round of questions, update the PR description with a click-to-expand section called Q&A that shows each round of clarifying questions + answers.
+
+Ask your questions by opening a PR comment thread where you have a question. Use PR discussion to shape the plan.
 
 ### 4. Update Tasks
 Use the clarifying question responses to update tasks and update the PR.
