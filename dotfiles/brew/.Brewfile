@@ -128,6 +128,8 @@ brew "luarocks"
 brew "make"
 # Graphics Library
 brew "mesa"
+# Media player based on MPlayer and mplayer2
+brew "mpv"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Adds an OCR text layer to scanned PDF files
