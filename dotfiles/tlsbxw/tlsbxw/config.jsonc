@@ -27,5 +27,18 @@
   ],
   // The default agent that commands use. For example, `tlsbxw up` will start this agent.
   // One of: copilot, opencode, pi
-  "defaultAgent": "copilot"
+  "defaultAgent": "copilot",
+
+  // Editor installed in the sandbox (via apt) and set as $EDITOR. One of: nano, vim, none (default none)
+  "editor": "vim",
+
+  // Host folders always mounted by `asbx up`, same as `-w`. Syntax: DIR[:ro|:rw]; read-only by default.
+  // A matching `-w` on the command line overrides the entry here.
+  "additionalWorkspaces": [],
+
+  // Symlinks created in the sandbox on startup, e.g. to share vim configs.
+  // source: host path (~ allowed); it must be under a mounted workspace (see additionalWorkspaces above), else asbx warns
+  // target: link path in the sandbox (~ is the sandbox home); skipped when it already exists
+  "symlinks": []
+  // "symlinks": [{ "source": "~/.vimrc", "target": "~/.vimrc" }]
 }
