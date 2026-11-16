@@ -32,10 +32,6 @@ brew "cffi"
 brew "colima"
 # Utility that creates projects from templates
 brew "cookiecutter"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Package acting as bridge between Node projects and their package managers
-brew "corepack"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Utility that creates projects from templates and maintains the cruft afterwards
@@ -132,6 +128,8 @@ brew "mesa"
 brew "mpv"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # Adds an OCR text layer to scanned PDF files
 brew "ocrmypdf"
 # OpenShift command-line interface tools
@@ -140,6 +138,8 @@ brew "openshift-cli"
 brew "parallel"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Python package management tool
 brew "poetry"
 # Modern API client that lives in your terminal
