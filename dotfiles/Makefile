@@ -28,6 +28,6 @@ stow:
 agents:
 	. ./makefile_utils.sh; agents_symlink "$(AGENTS_SYMLINK_DRYRUN)"
 
-tlsbxw:
-	# tlsbxw requires absolute path symlinks, which is incompatible with stow (uses relative paths).
-	ln -s  ~/dev/abode/dotfiles/tlsbxw/tlsbxw/config.jsonc ~/.config/tlsbxw/config.jsonc
+asbx:
+	# asbx requires absolute path symlinks, which is incompatible with stow (uses relative paths).
+	ln -s  ~/dev/abode/dotfiles/asbx/tlsbxw/config.jsonc ~/.config/asbx/config.jsonc
